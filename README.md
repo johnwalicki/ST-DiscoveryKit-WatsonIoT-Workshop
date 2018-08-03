@@ -10,3 +10,7 @@ This hands-on workshop will show you how to integrate sensors, wireless connecti
 The hands-on training is a working session – please bring your laptop. Note: Administrator rights is needed for software and driver installation. ST will provide the required STM32 development boards and software. SPACE IS LIMITED FOR THIS SESSION – FIRST COME, FIRST SEATED. Must be present and stay for training to receive free kit.
  
 Learn about the [STM32L4 Discovery Kit IoT node, low-power wireless, BLE, NFC, SubGHz, Wi-Fi](https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html) development board.
+
+References:
+- Download link to [TrueStudio](https://atollic.com/truestudio/)
+- Download link to the [IBM Watson IoT examples](https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html) that are buildable in TrueStudio
