@@ -51,7 +51,7 @@ This tutorial can be completed using an IBM Cloud Lite account.
 
 ## Part 2 - Create an Internet of Things Platform Starter application
 
-- Instructions : [Create an Internet of Things Platform Starter application](https://developer.ibm.com/code/howtos/how-to-create-an-internet-of-things-platform-starter-application)
+- Instructions : [Create an Internet of Things Platform Starter application](CREATEIOTP.md)
 
 ## Part 3 - Create a Watson IoT Platform Device Type and Device
 
