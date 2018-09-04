@@ -22,7 +22,7 @@ Node.js application that provides a visual programming editor that makes it easy
 
 ### Step 1 - Node-RED Visual Programming
 
-Recall that in Part 2, you created a IoT Starter Application. Once the Green **Running** icon appears, click the **View App URL** button (14)
+Recall that in Part 2, you created a IoT Starter Application. Once the Green **Running** icon appears, click the **View App URL** button (6)
 ![IBM Cloud screenshot](screenshots/Running-StarterKit-IoTP.png)
 
 ### Step 2 - How to secure your Node-RED Editor in IBM Cloud
@@ -50,9 +50,9 @@ Several panels will help you set up Node-RED in your Watson IoT Starter applicat
 ![IoTP Node-RED Default Flow](screenshots/IoTP-Starter-NodeRED-DefaultFlow.png)
 
 
-- The Node-RED Visual Programming Editor will open with a default flow.
-- On the left side is a palette of nodes that you can drag onto the flow.
-- You can wire nodes together to create a program.
+- The **Node-RED Visual Programming Editor** will open with a default flow.
+- On the left side is a **palette of nodes** that you can drag onto the flow.
+- You can **wire nodes together** to create a program.
 - The sample IoT Starter flow is not applicable to this workshop and can be deleted.
 
 ![IoT Starter Flow 1](screenshots/IoTStarter-DeleteFlow1-a.png)
@@ -74,7 +74,7 @@ Several panels will help you set up Node-RED in your Watson IoT Starter applicat
 
 ![Node-RED Manage Palette](screenshots/Node-RED-ManagePalette-a.png)
 
-- Turn to the **Install** tab (3), type node-red-dashboard (4) and press the **Install** button (5).
+- Turn to the **Install** tab (3), type **node-red-dashboard** (4) and press the **Install** button (5).
 
 ![Node-RED Manage Palette](screenshots/Node-RED-ManagePalette-b.png)
 

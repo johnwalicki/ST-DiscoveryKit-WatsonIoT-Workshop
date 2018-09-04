@@ -8,7 +8,6 @@ After completing this tutorial you will be able to:
 * Create an IoT Starter Kit application running in IBM Cloud
 * Launch the Watson IoT Starter application
 * Open the Watson IoT Platform so that you can send data from IoT devices and device simulators
-* Configure the Node-RED visual programming editor
 
 ## Prerequisites
 This tutorial can be completed using an IBM Cloud Lite account.
@@ -49,10 +48,10 @@ The Internet of Things Starter application will be provisioned in the IBM Cloud 
 ## Step 3 - Launch the Watson IoT platform
 
 Return to the IBM Cloud Application Details page.
-* Click on the **Overview** item (15) in the left navigation menu.
-* Click on your *iotf-service* (16) in the **Connections** tile.
+* Click on the **Overview** item (14) in the left navigation menu.
+* Click on your *iotf-service* (15) in the **Connections** tile.
 ![App Overview](screenshots/App-Overview-StarterKit-IoTP.png)
-* The **Internet of Things** service landing page will open. Click on the **Launch** (17) button.
+* The **Internet of Things** service landing page will open. Click on the **Launch** (16) button.
 ![IoT Platform Landing Page](screenshots/IoTP-Service-LandingPage.png)
 * The **Watson IoT Platform** service will open in a new browser tab and you can create an IoT device.
 ![IoT Platform Device Page](screenshots/IoTP-Service-DevicePage.png)
