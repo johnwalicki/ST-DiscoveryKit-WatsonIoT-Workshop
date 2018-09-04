@@ -1,67 +1,61 @@
 *Quick links :*
-[Home](/README.md) - [Part 1](../part1/README.md) - [Part 2](../part2/README.md) - [**Part 3**](../part3/README.md) - [Part 4](../part4/README.md)
+[Home](/README.md) - [Part 1](../part1/README.md) - [**Part 2**](../part2/README.md) - [Part 3](../part3/README.md) - [Part 4](../part4/README.md)
 ***
-**Part 3** - [Intro to Node-RED](NODERED.md) - [**Receive Sensor Data**](DHTDATA.md) - [Plot Data](DASHBOARD.md) - [Store Data](CLOUDANT.md) - [Historical Data](HISTORY.md) - [Control Interval](INTERVAL.md) - [Control LED](LED.md)
+**Part 2** - [**Device Registration**](DEVICE.md) - [Application](APP.md) - [MQTT](MQTT.md) - [Server Certificate](CERT1.md) - [Client Certificate](CERT2.md)
 ***
 
-# Receive Device Environmental Sensor Data in Node-RED
+# Registering a new device to the Watson IoT Platform
 
 ## Lab Objectives
 
-In this lab you will build a flow that receives Device environmental temperature and humidity sensor data.  You will learn:
+This Lab will show you how to register your ST Micro Discovery Kit IoT Node with the IBM Watson Internet of Things Platform.  In the lab you will learn:
 
-- How to create a new Node-RED flow and configure IoT Nodes
-- How to output the Device environmental temperature and humidity data.
-- How to work with JSON data and observe the sensor results in the Debug sidebar.
+- How to define a device type and register a device in the IoT Platform
 
 ### Introduction
 
-In just a few nodes, Node-RED can receive the data that was transmitted from the device over MQTT to Watson IoT Platform.  This simple exercise will be the foundation for the next several sections that plot the data in a dashboard, trigger Real Time threshold alerts, store the data in Cloud Storage and allow for data analytics and anomaly detection.
+Before you can connect a device to the Watson IoT Platform you need to define how the device will connect to the platform and also register the device to generate an access token for the device.  This will be used to verify the device identity (we will come back to device authentication later in this part of the workshop).
 
-### Step 1 - Configure an IoT in Node
+You need to decide how you want to group devices, by function, by hardware type, etc.  Each device registered on the platform must be registered against a device type.  There are no restrictions about how devices are grouped and the device types, for this workshop we will create a device type representing the Discovery Kit devices.
 
-- From the Input category of the left Node-RED palette, select an **ibmiot node** and drag it onto your Node-RED flow (1).
-- Double-click on the IBM IoT node. An **Edit ibmiot in node** sidebar will open.
-- Configure the Authentication dropdown to **Bluemix Service** (2).
-- Uncheck All and set the Device Type to **DiscoveryKit** (3).
-- Uncheck All and set the Event **status** (4).
-- Click on the red **Done** button.
- ![Receive DiscoveryKit Data](screenshots/DiscoveryKit-ReceiveData-IoTnode.png)
+### Step 1 - Add a new device type for Discovery Kit device
 
-### Step 2 - Extract the Temperature from the JSON Object
+- Navigate into the Devices section (1) of the console
+![Create DiscoveryKit Device](screenshots/IoTP-Devices.png)
+- Select the **Device Types** section (2).  Press the **+ Add Device Type** (3) button
+![Create DiscoveryKit Device](screenshots/IoTP-DeviceType.png)
+- Enter the following:
+ - Type : Ensure Device is selected (NOT Gateway)
+ - Name : Enter **DiscoveryKit** (4)
+- Press the **Next** button (5)
+![Create DiscoveryKit Device](screenshots/IoTP-DeviceType-Create.png)
+- Press the **Done** button (6)
+![Create DiscoveryKit Device](screenshots/IoTP-DeviceType-Done.png)
 
-- Recall that the environmental sensor data was transmitted in a JSON object
+### Step 2 - Register a new Discovery Kit device in the IoT Platform
 
- ```
- { "d": {"temperature":X, "humidity":Y }}
- ```
+You now have the opportunity to register a device.
+- Press **Register Device** (7).
+![Create DiscoveryKit Device](screenshots/IoTP-DeviceRegister.png)
+- The DiscoveryKit device type should be pre-selected.  You now need to enter a unique device ID.  You can choose how you want to identify devices.  For the workshop, use a simple format, such as **IoTNode1**. (8)
+- Press **Next** button (9)
+![Create DiscoveryKit Device](screenshots/IoTP-DeviceName.png)
+- Press **Next** button (10)
+![Create DiscoveryKit Device](screenshots/IoTP-DeviceInfo.png)
+- You will be prompted to provide a token (11). When developing I recommend choosing a token you can easily remember.  I set all my devices to use the same token when developing, but obviously this is not a good production practice.
 
-- Node-RED passes data from node to node in a *msg.payload* JSON object.
-- The **Change** node can be used to extract a particular value so that it can be directly output or manipulated (for instance in a Dashboard chart which we will take advantage of in the next section).
-- From the Function category of the left Node-RED palette, select a **Change** node and drag it onto your Node-RED flow (5).
-- Double-click on the Change node. An **Edit change node** sidebar will open.
-- Configure the "to" AZ dropdown to msg. and set it to *payload.d.temperature* (6).
-- Click on the red **Done** button.
- ![Receive DHT Data](screenshots/DiscoveryKit-ReceiveData-Changenode.png)
+- Each time you connect the device the token will need to be presented to the server and once the device is registered there is no way to recover a token, you will need to delete and reregister the device if the token is lost.
 
-## Step 3 - Node-RED Debug Nodes
+- Enter a **token** for your device (11) then press **Next** (12).
+![Create DiscoveryKit Device](screenshots/IoTP-DeviceToken.png)
+- You will see a summary of the device.  Press **Done** to complete the device registration.
+![Create DiscoveryKit Device](screenshots/IoTP-DeviceSummary.png)
+- You are now shown a **Device Credentials** page - this is the last chance you get to see the token.  Once you leave this page the token can not be recovered. Write down the Org, Device Type, Device ID and Authentication Token. You might even consider taking a screen shot.
+![Create DiscoveryKit Device](screenshots/IoTP-DeviceCreds.png)
 
-- Debug nodes can be used to print out JSON object values and help you validate your program.
-- From the Output category of the left Node-RED palette, drag two **debug nodes** onto your Node-RED flow (7).
-- Double-click on one of them. An **Edit debug node** sidebar will open.
-- Configure the Output to print the *complete msg object* (8).
-- Click on the red **Done** button.
- ![Receive DiscoveryKit Data](screenshots/DiscoveryKit-ReceiveData-Debugnode.png)
-
-### Step 4 - Wire the Node-RED nodes together
-
-- Wire the Node-RED nodes together by click / dragging your mouse from nodelet to nodelet as show in the screenshot.
-- Click on the red **Deploy** button in the upper right corner.
-- Observe the DHT sensor data in the **debug** tab of the Node-RED right sidebar.  You can expand the twisties to expose the JSON object information. Hover over a debug message in the right sidebar and the node that generated the message will be outlined in orange.
-  ![Receive DiscoveryKit Data](screenshots/DiscoveryKit-ReceiveData-Deploy.png)
 
 ***
-**Part 3** - [Intro to Node-RED](NODERED.md) - [**Receive Sensor Data**](DHTDATA.md) - [Plot Data](DASHBOARD.md) - [Store Data](CLOUDANT.md) - [Historical Data](HISTORY.md) - [Control Interval](INTERVAL.md) - [Control LED](LED.md)
+**Part 2** - [**Device Registration**](DEVICE.md) - [Application](APP.md) - [MQTT](MQTT.md) - [Server Certificate](CERT1.md) - [Client Certificate](CERT2.md)
 ***
 *Quick links :*
-[Home](/README.md) - [Part 1](../part1/README.md) - [Part 2](../part2/README.md) - [**Part 3**](../part3/README.md) - [Part 4](../part4/README.md)
+[Home](/README.md) - [Part 1](../part1/README.md) - [**Part 2**](../part2/README.md) - [Part 3](../part3/README.md) - [Part 4](../part4/README.md)
