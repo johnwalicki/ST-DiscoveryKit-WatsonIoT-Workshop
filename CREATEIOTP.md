@@ -1,3 +1,6 @@
+*Quick links :*
+[Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)
+***
 # Create an Internet of Things Platform Starter application
 In this tutorial you will learn how to create a Watson IoT Platform Starter application that can be used to connect IoT devices and simulated IoT devices to the Watson IoT Platform. The **Internet of Things Platform Starter** is designed with pre-assembled services that work together.  The Internet of Things Platform Starter includes a Node-RED Node.js web server, Cloudant database to store the sensor data, and the IoT platform service so you can connect devices.
 
@@ -24,7 +27,7 @@ You can complete this task in no more than 20 minutes.
 Follow these steps to create a Watson IoT Platform Starter application in IBM Cloud.
 
 * Create an [IBM Cloud account](https://console.bluemix.net/registration) and log into [IBM Cloud](https://console.bluemix.net/login)
-* Click on the [Catalog](https://console.bluemix.net/catalog/?search=internet%20of%20things%20platform%20starte) (1) and search for **internet of things** (2)
+* Click on the [Catalog](https://console.bluemix.net/catalog/?search=internet%20of%20things%20platform%20starter) (1) and search for **internet of things** (2)
 * Under	**Starter Kits** (3) click on **Internet of Things Platform Starter** (4)
 ![Catalog entry IoTP Starter Kit](screenshots/Catalog-StarterKit-IoTP.png)
 * Enter a **unique name** for your application (5). For example, *stmicro-discoverykit-yourname*. This name will be part of the **application URL** (6)
@@ -58,3 +61,8 @@ Return to the IBM Cloud Application Details page.
 
 ## Finished
 Congratulations.  You have completed the creation of a Watson Internet of Things Platform Starter application in IBM Cloud.
+
+***
+*Quick links :*
+[Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)
+***

@@ -88,3 +88,7 @@ This tutorial can be completed using an IBM Cloud Lite account.
 ## References:
 - Download link to [TrueStudio](https://atollic.com/truestudio/)
 - Download link to the [IBM Watson IoT examples](https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html) that are buildable in TrueStudio
+
+*Quick links :*
+[Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)
+***

@@ -1,7 +1,5 @@
 *Quick links :*
-[Home](/README.md) - [Part 1](../part1/README.md) - [Part 2](../part2/README.md) - [**Part 3**](../part3/README.md) - [Part 4](../part4/README.md)
-***
-**Part 3** - [Intro to Node-RED](NODERED.md) - [Receive Sensor Data](DHTDATA.md) - [Plot Data](DASHBOARD.md) - [**Store Data**](CLOUDANT.md) - [Historical Data](HISTORY.md) - [Control Interval](INTERVAL.md) - [Control LED](DISPLAY.md)
+[Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)
 ***
 
 # Store Data in Cloud Storage for Historical Data Analytics
@@ -23,20 +21,20 @@ While real-time charts of sensor data and threshold alerts are useful, the power
 Open the “Get the Code” github URL listed below, mark or Ctrl-A to select all of the text, and copy the text for the flow to your Clipboard. Recall from a previous section, click on the Node-RED Menu, then Import, then Clipboard. Paste the text of the flow into the Import nodes dialog and press the red Import button.
 
 <p align="center">
-  <strong>Get the Code: <a href="flows/NR-Cloudant-DHTSensorData.json">Node-RED Cloud Storage Flow</strong></a>
+  <strong>Get the Code: <a href="flows/NR-Cloudant-STMSensorData.json">Node-RED Cloud Storage Flow</strong></a>
 </p>
 
 ### Step 2 - Store IoT Sensor Data with Node-RED
 
-In this Step you will use Node-RED to store IoT Sensor data from the ESP8266 DHT environmental sensors in a Cloudant database.
+In this Step you will use Node-RED to store IoT Sensor data from the ST Microelectronics Discovery Kit IoT Node environmental sensors in a Cloudant database.
 
 - When the flow is imported there will be a misconfigured Cloudant node – indicated by a red triangle.
  ![Node-RED Cloudant Flow cropped](screenshots/Node-RED-Cloudant-flow-cropped.png)
 - To associate the **Cloudant** database node with your IBM Cloud instance, click on the historical data Cloudant node and press the red Done button. The red error triangle will turn blue.
- ![Node-RED Cloudant Flow cropped](screenshots/Node-RED-Cloudant-flow.png)
+ ![Node-RED Cloudant reconnect](screenshots/Node-RED-Cloudant-flow.png)
 
-- The *Format Time Series DB Record* function node recasts the ESP8266 DHT JSON object. As required by any time series dataset, the Node-RED function node adds a timestamp to the record before writing it to the Cloudant storage. Note in the screenshot, the debug sidebar shows a ```msg.payload``` that includes the Epoch timestamp (milliseconds since Jan 1 1970)
- ![Node-RED Cloudant Flow cropped](screenshots/Node-RED-Cloudant-flow-timeseries.png)
+- The *Format Time Series DB Record* function node recasts the Discovery Kit JSON object. As required by any time series dataset, the Node-RED function node adds a timestamp to the record before writing it to the Cloudant storage. Note in the screenshot, the debug sidebar shows a ```msg.payload``` that includes the Epoch timestamp (milliseconds since Jan 1 1970)
+ ![Node-RED Cloudant Flow timeseries](screenshots/Node-RED-Cloudant-flow-timeseries.png)
 - Click the **Deploy** button on the top of menu bar to deploy the Node-RED flow.
 - The device environmental sensor data is now being recorded in a Cloudant database.
 
@@ -52,7 +50,6 @@ In this Step you will use Node-RED to store IoT Sensor data from the ESP8266 DHT
  ![Cloudant NoSQL Historian Data](screenshots/CloudantNoSQLHistorianDB.png)
 
 ***
-**Part 3** - [Intro to Node-RED](NODERED.md) - [Receive Sensor Data](DHTDATA.md) - [Plot Data](DASHBOARD.md) - [**Store Data**](CLOUDANT.md) - [Historical Data](HISTORY.md) - [Control Interval](INTERVAL.md) - [Control LED](DISPLAY.md)
-***
 *Quick links :*
-[Home](/README.md) - [Part 1](../part1/README.md) - [Part 2](../part2/README.md) - [**Part 3**](../part3/README.md) - [Part 4](../part4/README.md)
+[Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)
+***

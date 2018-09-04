@@ -1,9 +1,6 @@
 *Quick links :*
-[Home](/README.md) - [Part 1](../part1/README.md) - [Part 2](../part2/README.md) - [Part 3](../part3/README.md) - [**Part 4**](../part4/README.md)
+[Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)
 ***
-**Part 4** - [Watson Studio](STUDIO.md) - [**Notebooks**](JUPYTER.md)
-***
-
 # Run a Jupyter Notebook in Watson Studio
 
 ## Lab Objectives
@@ -20,20 +17,20 @@ Jupyter Notebook is a web-based interactive computational environment for intera
 
 ### Step 1 - Cloudant Credentials
 
-Before we can read the ESP8266 IoT temperature and humidity data into a Jupyter notebook we need to create credentials to the Cloudant database created in the [Part 3 - Store Data in Cloud Storage](../part3/CLOUDANT.md) section.
+Before we can read the ST Microelectronics Discovery Kit IoT Node temperature and humidity data into a Jupyter notebook we need to create credentials to the Cloudant database created in the [Store Data in Cloud Storage](CLOUDANT.md) section.
 
 - Open a new browser tab.
 - Return to the [IBM Cloud dashboard](https://console.bluemix.net/dashboard/apps/) and your IoT Starter application. **Click** on the cloudantNoSQLDB service connection (1).
 
- ![Cloudant NoSQL Service Connection](../part3/screenshots/CloudantNoSQLServiceConnection.png)
+ ![Cloudant NoSQL Service Connection](screenshots/CloudantNoSQLServiceConnection.png)
 
 - Read about the Cloudant Storage service and click on the **Service credentials** menu item in the left menu bar.
 
- ![Cloudant NoSQL Service Instance](../part3/screenshots/CloudantNoSQLServiceInstance.png)
+ ![Cloudant NoSQL Service Instance](screenshots/CloudantNoSQLServiceInstance.png)
 
 - Click on **New credential**
 
- ![Cloudant NoSQL Service Instance](screenshots/Cloudant-NewCreds.png)
+ ![Cloudant NoSQL Service Instance](screenshots/CloudantNoSQL-NewCreds.png)
 
 - Give your credential a name: **Credentials-DSX**
 - Click on **Add**
@@ -43,21 +40,20 @@ Before we can read the ESP8266 IoT temperature and humidity data into a Jupyter 
 
 ### Step 2 - Run a Jupyter Notebook
 
-- Return to the Watson Studio browser tab and open the **ESP8266 DHT IoT Sensor Analytics** notebook.
+- Return to the Watson Studio browser tab and open the **STM Discovery Kit IoT Sensor Analytics** notebook.
 
- ![Watson Studio Assets](screenshots/WatsonStudio-Notebook-ESP8266.png)
+ ![Watson Studio Assets](screenshots/WatsonStudio-Notebook-DiscoveryKit.png)
 
 - Make certain you are in **Edit** mode by clicking on the Pencil icon.
-- You will now copy the Cloudant hostname, user and password credentials to your **ESP8266 DHT IoT Sensor Analytics** notebook cell 5
+- You will now copy the Cloudant hostname, user and password credentials to your **STM Discovery Kit IoT Sensor Analytics** notebook cell 5
 
- ![Watson Studio Assets](screenshots/WatsonStudio-Notebook-ESP8266-creds.png)
+ ![Watson Studio Assets](screenshots/WatsonStudio-Notebook-DiscoveryKit-creds.png)
 
 - Move the focus to the first cell.
 - In the toolbar, click on the **Run** button to run each cell.
-- Spark will calculate the Average, Standard Deviation, Max and Min of your ESP8266 IoT Historical data set.
+- Spark will calculate the Average, Standard Deviation, Max and Min of your DiscoveryKit IoT Historical data set.
 
 ***
-**Part 4** - [Watson Studio](STUDIO.md) - [**Notebooks**](JUPYTER.md)
-***
 *Quick links :*
-[Home](/README.md) - [Part 1](../part1/README.md) - [Part 2](../part2/README.md) - [Part 3](../part3/README.md) - [**Part 4**](../part4/README.md)
+[Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)
+***

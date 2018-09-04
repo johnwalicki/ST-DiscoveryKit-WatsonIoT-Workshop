@@ -1,7 +1,6 @@
-*Quick links :*
-[Home](/README.md) - [Part 1](../part1/README.md) - [Part 2](../part2/README.md) - [**Part 3**](../part3/README.md) - [Part 4](../part4/README.md)
 ***
-**Part 3** - [Intro to Node-RED](NODERED.md) - [Receive Sensor Data](DHTDATA.md) - [**Plot Data**](DASHBOARD.md) - [Store Data](CLOUDANT.md) - [Historical Data](HISTORY.md) - [Control Interval](INTERVAL.md) - [Control LED](LED.md)
+*Quick links :*
+[Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)
 ***
 
 # Node-RED Dashboard Charts - Plot Environmental Sensor Data
@@ -24,7 +23,7 @@ In this section you will learn about Node-RED Dashboard Charts and then create a
 Open the “Get the Code” github URL listed below, mark or Ctrl-A to select all of the text, and copy the text for the flow to your Clipboard. Recall from a previous section, click on the Node-RED Menu, then Import, then Clipboard. Paste the text of the flow into the Import nodes dialog and press the red Import button. Finally, click on the red **Deploy** button in the upper right corner.
 
 <p align="center">
-  <strong>Get the Code: <a href="flows/NRD-Charts-DHTSensorData.json">Node-RED Dashboard Charts</strong></a>
+  <strong>Get the Code: <a href="flows/NRD-Charts-STMSensorData.json">Node-RED Dashboard Charts</strong></a>
 </p>
 
 ### Step 2 - Learn about various Node-RED Dashboard Chart types
@@ -55,14 +54,14 @@ The next Node-RED flow - **Dashboard Intro** - uses a variety of UI widgets to d
 Now that you have learned about Node-RED Dashboard and Chart types, you are ready to plot the real-time device environmental sensor data.
 
 - Turn to the next flow - **Plot DHT Sensor Data**
-- The **IBM IoT** node is already configured to receive *status* Device Events from the ESP8266 Device Type.
-- The **Change** nodes extract the ```msg.payload.d.temp``` and ```msg.payload.d.humidity``` values from the JSON object sent over MQTT from the device environmental sensor to Watson IoT Platform.
+- The **IBM IoT** node is already configured to receive *status* Device Events from the DiscoveryKit Device Type.
+- The **Change** nodes extract the ```msg.payload.d.temperature``` and ```msg.payload.d.humidity``` values from the JSON object sent over MQTT from the device environmental sensor to Watson IoT Platform.
 - The environmental sensor values are sent to two charts to plot Temperature and Humidity.
- ![NRD ESP8266 DHT chart flow](screenshots/Node-RED-Dashboard-DHT-flow.png)
-- Turn to the Node-RED Dashboard browser tab that you launched in Step 2, click on the tab in the upper left corner, and select the **ESP8266 Workshop** tab.
+ ![NRD STM Discovery Kit chart flow](screenshots/Node-RED-Dashboard-STM-flow.png)
+- Turn to the Node-RED Dashboard browser tab that you launched in Step 2, click on the tab in the upper left corner, and select the **Discovery Kit Workshop** tab.
 
 <p align="center">
-<img height="395" width="282" src="screenshots/NRD-ESP8266-DHT-TempHum-Chart.png">
+<img height="395" width="282" src="screenshots/NRD-STM-DiscoveryKit-TempHum-Chart.png">
 </p>
 
 ### Step 5 - Trigger Alerts when Real-Time Sensor Data Exceeds a Threshold Value
@@ -71,20 +70,19 @@ Often IoT devices and sensors are deployed so that alerts can be triggered when 
 
 - In the prior step, the flow included three nodes that have not yet been discussed.
 - A **Switch** node is configured to *Warn on High Values* by testing if ```msg.payload.d.temp``` is greater than 30C.
-- A **Template** node is configured to construct a sentence ```Alert : Critical Value Detected {{payload.d.temp}}```
+- A **Template** node is configured to construct a sentence ```Alert : Critical Value Detected {{payload.d.temperature}}```
 - The Alert message is sent to a **Node-RED Dashboard Notification** node to display in the browser.
 - This flow could be extended to call a **Twilio** node to send a SMS message.  It could raise an alarm in another system by triggering a REST API call to the manufacturing production operations systems.
 
- ![NRD ESP8266 DHT chart flow](screenshots/Node-RED-Dashboard-DHT-flow.png)
+ ![NRD STM DiscoveryKit chart flow](screenshots/Node-RED-Dashboard-STMDK-flow.png)
 
-- Return to the Node-RED Dashboard **ESP8266 Workshop** tab and increase the temperature of your DHT sensor above 30C.
+- Return to the Node-RED Dashboard **Discovery Kit Workshop** tab and increase the temperature of your Discovery Kit sensor above 30C.
 
  <p align="center">
- <img height="395" width="282" src="screenshots/NRD-ESP8266-DHT-TempHum-ChartAlert.png">
+ <img height="395" width="282" src="screenshots/NRD-STM-DiscoveryKit-TempHum-ChartAlert.png">
  </p>
 
-***
-**Part 3** - [Intro to Node-RED](NODERED.md) - [Receive Sensor Data](DHTDATA.md) - [**Plot Data**](DASHBOARD.md) - [Store Data](CLOUDANT.md) - [Historical Data](HISTORY.md) - [Control Interval](INTERVAL.md) - [Control LED](LED.md)
-***
-*Quick links :*
-[Home](/README.md) - [Part 1](../part1/README.md) - [Part 2](../part2/README.md) - [**Part 3**](../part3/README.md) - [Part 4](../part4/README.md)
+ ***
+ *Quick links :*
+ [Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)
+ ***

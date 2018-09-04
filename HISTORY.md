@@ -1,7 +1,5 @@
 *Quick links :*
-[Home](/README.md) - [Part 1](../part1/README.md) - [Part 2](../part2/README.md) - [**Part 3**](../part3/README.md) - [Part 4](../part4/README.md)
-***
-**Part 3** - [Intro to Node-RED](NODERED.md) - [Receive Sensor Data](DHTDATA.md) - [Plot Data](DASHBOARD.md) - [Store Data](CLOUDANT.md) - [**Historical Data**](HISTORY.md) - [Control Interval](INTERVAL.md) - [Control LED](LED.md)
+[Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)
 ***
 
 # Node-RED Charts of Historical Sensor Data
@@ -22,7 +20,7 @@ The previous section stored the Device environment sensor data into a Cloudant D
 - Open the “Get the Code” github URL listed below, mark or Ctrl-A to select all of the text, and copy the text for the flow to your Clipboard. Recall from a previous section, click on the Node-RED Menu, then Import, then Clipboard. Paste the text of the flow into the Import nodes dialog and press the red Import button.
 
 <p align="center">
-  <strong>Get the Code: <a href="flows/NRD-DHTSensorData-HistorianChart.json">Node-RED Historian Chart Flow</strong></a>
+  <strong>Get the Code: <a href="flows/NRD-STMSensorData-HistorianChart.json">Node-RED Historian Chart Flow</strong></a>
 </p>
 
 - Click on the **Cloudant** node on the Historical Chart flow to confirm that it is configured to your IoT Platform Cloudant service instance.
@@ -32,20 +30,19 @@ The previous section stored the Device environment sensor data into a Cloudant D
 
 - The Historical Chart flow reads the IoT Sensor Device data from the Cloudant database and formats it into a Chart array before sending the data to a Node-RED Chart node.
 
-![Node-RED Historian Flow](screenshots/NRD-ESP8266-DHT-TempHistorian-flow.png)
+![Node-RED Historian Flow](screenshots/NRD-STM-DiscoveryKit-TempHistorian-flow.png)
 
 ### Step 3 - Historian Charts of Device Environmental Sensor data
 
 - Turn to the Node-RED Dashboard browser tab, click on the menu tab in the upper left corner, and select the Historical Data tab.
-- On the Historical Data dashboard, click on the **LOAD ESP8266 DHT DATA** button to start the data visualization.
+- On the Historical Data dashboard, click on the **LOAD DISCOVERY KIT DATA** button to start the data visualization.
 - The button will trigger the read of the historian DB records created in the previous section.
 - In the *Create a Chart Array for Chart.js* function node the time series temperature data from the Device Environmental sensor is formatted into a Chart Array and sorted chronologically.
 - The Chart Array is passed to the Node-RED Chart node to render the graph.
 
-![Node-RED Historian Flow](screenshots/NRD-ESP8266-DHT-TempHistorian-Chart.png)
+![Node-RED Historian Flow](screenshots/NRD-STM-DiscoveryKit-TempHistorian-Chart.png)
 
 ***
-**Part 3** - [Intro to Node-RED](NODERED.md) - [Receive Sensor Data](DHTDATA.md) - [Plot Data](DASHBOARD.md) - [Store Data](CLOUDANT.md) - [**Historical Data**](HISTORY.md) - [Control Interval](INTERVAL.md) - [Control LED](LED.md)
-***
 *Quick links :*
-[Home](/README.md) - [Part 1](../part1/README.md) - [Part 2](../part2/README.md) - [**Part 3**](../part3/README.md) - [Part 4](../part4/README.md)
+[Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)
+***

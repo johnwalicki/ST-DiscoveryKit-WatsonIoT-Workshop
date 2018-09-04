@@ -1,7 +1,5 @@
 *Quick links :*
-[Home](/README.md) - [Part 1](../part1/README.md) - [Part 2](../part2/README.md) - [**Part 3**](../part3/README.md) - [Part 4](../part4/README.md)
-***
-**Part 3** - [Intro to Node-RED](NODERED.md) - [**Receive Sensor Data**](DHTDATA.md) - [Plot Data](DASHBOARD.md) - [Store Data](CLOUDANT.md) - [Historical Data](HISTORY.md) - [Control Interval](INTERVAL.md) - [Control LED](LED.md)
+[Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)
 ***
 
 # Receive Device Environmental Sensor Data in Node-RED
@@ -24,6 +22,7 @@ In just a few nodes, Node-RED can receive the data that was transmitted from the
 - Double-click on the IBM IoT node. An **Edit ibmiot in node** sidebar will open.
 - Configure the Authentication dropdown to **Bluemix Service** (2).
 - Uncheck All and set the Device Type to **DiscoveryKit** (3).
+- Check All Device Ids
 - Uncheck All and set the Event **status** (4).
 - Click on the red **Done** button.
  ![Receive DiscoveryKit Data](screenshots/DiscoveryKit-ReceiveData-IoTnode.png)
@@ -33,23 +32,31 @@ In just a few nodes, Node-RED can receive the data that was transmitted from the
 - Recall that the environmental sensor data was transmitted in a JSON object
 
  ```
- { "d": {"temperature":X, "humidity":Y }}
+ { "d": {"temperature":T,"humidity":H,"pressure":B,"proximity":D,"acc_x":X,"acc_y":Y,"acc_z":Z,"gyr_x":X,"gyr_y":Y,"gyr_z":Z,"mag_x":X,"mag_y":Y,"mag_z":Z} }
  ```
 
 - Node-RED passes data from node to node in a *msg.payload* JSON object.
+- The **Switch** node can be used to test if the msg.payload.d.temperature is not null.
+- From the Function category of the left Node-RED palette, select a **Switch** node and drag it onto your Node-RED flow (5).
+- Double-click on the Switch node. An **Edit switch node** sidebar will open.
+- Set the "Property" field to *payload.d.temperature* (6).
+- From the dropdown, select **is not null** (7)
+- Click on the red **Done** button.
+ ![Receive DiscoveryKit Data](screenshots/DiscoveryKit-ReceiveData-Changenode.png)
+
 - The **Change** node can be used to extract a particular value so that it can be directly output or manipulated (for instance in a Dashboard chart which we will take advantage of in the next section).
-- From the Function category of the left Node-RED palette, select a **Change** node and drag it onto your Node-RED flow (5).
+- From the Function category of the left Node-RED palette, select a **Change** node and drag it onto your Node-RED flow (8).
 - Double-click on the Change node. An **Edit change node** sidebar will open.
-- Configure the "to" AZ dropdown to msg. and set it to *payload.d.temperature* (6).
+- Configure the "to" AZ dropdown to msg. and set it to *payload.d.temperature* (9).
 - Click on the red **Done** button.
  ![Receive DiscoveryKit Data](screenshots/DiscoveryKit-ReceiveData-Changenode.png)
 
 ## Step 3 - Node-RED Debug Nodes
 
 - Debug nodes can be used to print out JSON object values and help you validate your program.
-- From the Output category of the left Node-RED palette, drag two **debug nodes** onto your Node-RED flow (7).
+- From the Output category of the left Node-RED palette, drag two **debug nodes** onto your Node-RED flow (10).
 - Double-click on one of them. An **Edit debug node** sidebar will open.
-- Configure the Output to print the *complete msg object* (8).
+- Configure the Output to print the *complete msg object* (11).
 - Click on the red **Done** button.
  ![Receive DiscoveryKit Data](screenshots/DiscoveryKit-ReceiveData-Debugnode.png)
 
@@ -57,11 +64,10 @@ In just a few nodes, Node-RED can receive the data that was transmitted from the
 
 - Wire the Node-RED nodes together by click / dragging your mouse from nodelet to nodelet as show in the screenshot.
 - Click on the red **Deploy** button in the upper right corner.
-- Observe the DHT sensor data in the **debug** tab of the Node-RED right sidebar.  You can expand the twisties to expose the JSON object information. Hover over a debug message in the right sidebar and the node that generated the message will be outlined in orange.
+- Observe the DiscoveryKit IoT Node sensor data in the **debug** tab of the Node-RED right sidebar.  You can expand the twisties to expose the JSON object information. Hover over a debug message in the right sidebar and the node that generated the message will be outlined in orange.
   ![Receive DiscoveryKit Data](screenshots/DiscoveryKit-ReceiveData-Deploy.png)
 
 ***
-**Part 3** - [Intro to Node-RED](NODERED.md) - [**Receive Sensor Data**](DHTDATA.md) - [Plot Data](DASHBOARD.md) - [Store Data](CLOUDANT.md) - [Historical Data](HISTORY.md) - [Control Interval](INTERVAL.md) - [Control LED](LED.md)
-***
 *Quick links :*
-[Home](/README.md) - [Part 1](../part1/README.md) - [Part 2](../part2/README.md) - [**Part 3**](../part3/README.md) - [Part 4](../part4/README.md)
+[Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)
+***
