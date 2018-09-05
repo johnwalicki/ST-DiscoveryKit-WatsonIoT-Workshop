@@ -42,7 +42,7 @@ In this workshop, you will learn how to:
 ## Prerequisites
 This tutorial can be completed using an IBM Cloud Lite account.
 
-* Create an [IBM Cloud account](https://console.bluemix.net/registration)
+* Create an [IBM Cloud account](https://ibm.biz/BdYMsj)
 * Log into [IBM Cloud](https://console.bluemix.net/login)
 
 ## Part 1 - ST Micro Discovery Kit IoT Node and Watson IoT Quickstart
