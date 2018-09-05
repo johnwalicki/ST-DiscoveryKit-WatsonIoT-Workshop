@@ -23,7 +23,7 @@ In just a few nodes, Node-RED can receive the data that was transmitted from the
 - Configure the Authentication dropdown to **Bluemix Service** (2).
 - Uncheck All and set the Device Type to **DiscoveryKit** (3).
 - Check All Device Ids (4)
-- Uncheck All and set the Event **status** (5).
+- Uncheck All and set the Event to **status** (5).
 - Click on the red **Done** button.
  ![Receive DiscoveryKit Data](screenshots/DiscoveryKit-ReceiveData-IoTnode.png)
 

@@ -56,7 +56,7 @@ Several panels will help you set up Node-RED in your Watson IoT Starter applicat
 ![IoT Starter Flow 1](screenshots/IoTStarter-DeleteFlow1-a.png)
 
 - Click the **+** icon (7) to add a new tab.  Double Click on the **Flow 2** tab header (8).
-- Rename this tab from **Flow 2** to Receive ESP8266 Data (9)
+- Rename this tab from **Flow 2** to Receive Discovery Kit Data (9)
 
 ![IoT Starter Flow 1](screenshots/IoTStarter-DeleteFlow1-b.png)
 
@@ -89,7 +89,7 @@ In this step, you will **learn** how to Import a prebuilt flow from GitHub
 
 ![Node-RED Import](screenshots/Node-RED-Import-a.png)
 
-- Paste the text of the flow into the **Import nodes** dialog and press the red **Import** button. Don't type the text in the screenshot!
+- Paste the text of the flow into the **Import nodes** dialog and press the red **Import** button. This is an example of how to paste flows into your Node-RED editor. Don't type the text in the screenshot!
 
 ![Node-RED Import](screenshots/Node-RED-Import-b.png)
 

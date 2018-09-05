@@ -1,73 +1,98 @@
 [
     {
-        "id": "537283ab.5ef624",
+        "id": "6b73c2e5.96fc4c",
         "type": "tab",
         "label": "Chart Intro",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "9fa5ae27.2c6838",
+        "id": "e61d7807.20aac8",
         "type": "tab",
         "label": "Dashboard Intro",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "2a9f98d3.89463",
+        "id": "f828d7eb.899ab8",
         "type": "tab",
-        "label": "Plot DHT Sensor Data",
+        "label": "Plot STM Sensor Data",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "3b10840.e8a04fc",
-        "type": "ui_group",
-        "z": "9fa5ae27.2c6838",
-        "name": "Dashboard Controls",
-        "tab": "da01dede.4c6fe8",
-        "order": 2,
-        "disp": true,
-        "width": "6"
-    },
-    {
-        "id": "ff0ecf5d.bee87",
-        "type": "ui_group",
-        "z": "",
-        "name": "Start / Stop",
-        "tab": "da01dede.4c6fe8",
-        "order": 1,
-        "disp": true,
-        "width": "6"
-    },
-    {
-        "id": "da01dede.4c6fe8",
+        "id": "f38f048b.b80518",
         "type": "ui_tab",
-        "z": "9fa5ae27.2c6838",
+        "z": "e61d7807.20aac8",
         "name": "Introduction",
         "icon": "dashboard",
-        "order": 2
+        "order": 3
     },
     {
-        "id": "a08a610d.d26148",
+        "id": "a0ddebfd.aaa1d",
         "type": "ui_group",
         "z": "",
-        "name": "ESP8266 Sensors",
-        "tab": "9acd054e.522e18",
+        "name": "Line Chart Examples",
+        "tab": "26ea978d.4cef78",
+        "order": 1,
         "disp": true,
         "width": "6",
         "collapse": false
     },
     {
-        "id": "9acd054e.522e18",
+        "id": "26ea978d.4cef78",
         "type": "ui_tab",
         "z": "",
-        "name": "ESP8266 Workshop",
+        "name": "Chart Examples",
         "icon": "dashboard",
-        "order": 3
+        "order": 1
     },
     {
-        "id": "a6642517.33c128",
+        "id": "a1e26bfa.0fdf48",
+        "type": "ui_group",
+        "z": "",
+        "name": "Pie Chart Examples",
+        "tab": "26ea978d.4cef78",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "e466d459.7c5a",
+        "type": "ui_group",
+        "z": "",
+        "name": "Bar Chart Examples",
+        "tab": "26ea978d.4cef78",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "8044ca01.afd2c8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Start / Stop",
+        "tab": "f38f048b.b80518",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "200ffc2.4a43704",
+        "type": "ui_group",
+        "z": "",
+        "name": "Dashboard Controls",
+        "tab": "f38f048b.b80518",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "80d75706.14e7d",
         "type": "ui_base",
         "theme": {
             "name": "theme-light",
@@ -156,46 +181,28 @@
         }
     },
     {
-        "id": "b84d1cfb.bb9d28",
-        "type": "ui_group",
-        "z": "",
-        "name": "Line Chart Examples",
-        "tab": "311c5ab9.1536a6",
-        "disp": true,
-        "width": "8"
-    },
-    {
-        "id": "227c4089.a7b298",
-        "type": "ui_group",
-        "z": "",
-        "name": "Bar Chart Examples",
-        "tab": "311c5ab9.1536a6",
-        "order": 3,
-        "disp": true,
-        "width": "8"
-    },
-    {
-        "id": "e75237e3.b0a2b8",
-        "type": "ui_group",
-        "z": "",
-        "name": "Pie Chart Examples",
-        "tab": "311c5ab9.1536a6",
-        "order": 2,
-        "disp": true,
-        "width": "6"
-    },
-    {
-        "id": "311c5ab9.1536a6",
+        "id": "9ee7881.e0f8778",
         "type": "ui_tab",
         "z": "",
-        "name": "Chart Examples",
-        "icon": "fa-area-chart",
-        "order": 1
+        "name": "Discovery Kit Workshop",
+        "icon": "dashboard",
+        "order": 3
     },
     {
-        "id": "8ca2324a.35e27",
+        "id": "8e13d0e8.99c598",
+        "type": "ui_group",
+        "z": "",
+        "name": "Discovery Kit Sensors",
+        "tab": "9ee7881.e0f8778",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "633bae1e.008508",
         "type": "inject",
-        "z": "9fa5ae27.2c6838",
+        "z": "e61d7807.20aac8",
         "name": "",
         "topic": "",
         "payload": "",
@@ -207,14 +214,14 @@
         "y": 140,
         "wires": [
             [
-                "fc77c46b.45161"
+                "c58c5119.827ab"
             ]
         ]
     },
     {
-        "id": "41341309.e28eac",
+        "id": "c15ea1c5.969918",
         "type": "function",
-        "z": "9fa5ae27.2c6838",
+        "z": "e61d7807.20aac8",
         "name": "Random #s",
         "func": "if( msg.payload === false ) {\n    return null;\n}\nmsg.payload = Math.round(Math.random()*100);\nreturn msg;",
         "outputs": 1,
@@ -223,16 +230,574 @@
         "y": 60,
         "wires": [
             [
-                "838eb2fe.a65d18"
+                "5a6a66f1.d94"
             ]
         ]
     },
     {
-        "id": "8b1abada.50c0f",
+        "id": "dbc47c80.0aca78",
+        "type": "inject",
+        "z": "e61d7807.20aac8",
+        "name": "Instructions",
+        "topic": "",
+        "payload": "Use the toggle switch to start / stop the generation of random numbers",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "2de29a96.96fa9e"
+            ]
+        ]
+    },
+    {
+        "id": "cabb99c8.0cf92",
+        "type": "switch",
+        "z": "e61d7807.20aac8",
+        "name": "Warn on High Values",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "90",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 400,
+        "wires": [
+            [
+                "15f77c6.442f884"
+            ]
+        ]
+    },
+    {
+        "id": "15f77c6.442f884",
+        "type": "template",
+        "z": "e61d7807.20aac8",
+        "name": "Alert Msg",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Alert : Critical Value Detected {{payload}}",
+        "output": "str",
+        "x": 600,
+        "y": 400,
+        "wires": [
+            [
+                "e8dd4642.285678"
+            ]
+        ]
+    },
+    {
+        "id": "5a6a66f1.d94",
+        "type": "link out",
+        "z": "e61d7807.20aac8",
+        "name": "",
+        "links": [
+            "fc9c2af3.67052"
+        ],
+        "x": 555,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "fc9c2af3.67052",
+        "type": "link in",
+        "z": "e61d7807.20aac8",
+        "name": "",
+        "links": [
+            "5a6a66f1.d94"
+        ],
+        "x": 95,
+        "y": 360,
+        "wires": [
+            [
+                "d08893cd.a4efd8",
+                "30763357.5cb88c",
+                "3d85e801.ded8b",
+                "d6f8c87e.c71268",
+                "cabb99c8.0cf92"
+            ]
+        ]
+    },
+    {
+        "id": "9993e761.95d168",
+        "type": "ibmiot in",
+        "z": "f828d7eb.899ab8",
+        "authentication": "boundService",
+        "apiKey": "",
+        "inputType": "evt",
+        "logicalInterface": "",
+        "ruleId": "",
+        "deviceId": "",
+        "applicationId": "",
+        "deviceType": "DiscoveryKit",
+        "eventType": "status",
+        "commandType": "",
+        "format": "json",
+        "name": "IBM IoT",
+        "service": "registered",
+        "allDevices": true,
+        "allApplications": "",
+        "allDeviceTypes": false,
+        "allLogicalInterfaces": false,
+        "allEvents": false,
+        "allCommands": "",
+        "allFormats": "",
+        "qos": 0,
+        "x": 90,
+        "y": 180,
+        "wires": [
+            [
+                "55fabe72.639fb",
+                "2e377b48.0320ec",
+                "21b74c41.bfb984",
+                "8fdfcff6.9904b"
+            ]
+        ]
+    },
+    {
+        "id": "55fabe72.639fb",
+        "type": "debug",
+        "z": "f828d7eb.899ab8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 270,
+        "y": 110,
+        "wires": []
+    },
+    {
+        "id": "2e377b48.0320ec",
+        "type": "change",
+        "z": "f828d7eb.899ab8",
+        "name": "Chart Temperature",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.d.temperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 160,
+        "wires": [
+            [
+                "47c099e.6642268"
+            ]
+        ]
+    },
+    {
+        "id": "21b74c41.bfb984",
+        "type": "change",
+        "z": "f828d7eb.899ab8",
+        "name": "Chart Humidity",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.d.humidity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 200,
+        "wires": [
+            [
+                "f2827b9e.82b4f"
+            ]
+        ]
+    },
+    {
+        "id": "8fdfcff6.9904b",
+        "type": "switch",
+        "z": "f828d7eb.899ab8",
+        "name": "Warn on High Values",
+        "property": "payload.d.temperature",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "30",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 300,
+        "y": 250,
+        "wires": [
+            [
+                "8d1cab0d.c8c8d8"
+            ]
+        ]
+    },
+    {
+        "id": "8d1cab0d.c8c8d8",
+        "type": "template",
+        "z": "f828d7eb.899ab8",
+        "name": "Alert Msg",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Alert : Critical Value Detected {{payload.d.temperature}}",
+        "output": "str",
+        "x": 490,
+        "y": 250,
+        "wires": [
+            [
+                "b6ee00eb.2ecce8"
+            ]
+        ]
+    },
+    {
+        "id": "d93630d8.224ca8",
+        "type": "function",
+        "z": "6b73c2e5.96fc4c",
+        "name": "Fill Single Chart Array",
+        "func": "var chart = [{\n    \"series\":[\"A\"],\n    \"data\":[[{\"x\":1504029632890,\"y\":5},\n             {\"x\":1504029633514,\"y\":8},\n             {\"x\":1504029634400,\"y\":3}]],\n    \"labels\":[\"\"]\n}];\nmsg.payload = chart;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 120,
+        "wires": [
+            [
+                "4c975bd.979f9a4",
+                "34771dea.aa7c6a"
+            ]
+        ]
+    },
+    {
+        "id": "34771dea.aa7c6a",
+        "type": "debug",
+        "z": "6b73c2e5.96fc4c",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 590,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "64b66095.d7b6f8",
+        "type": "comment",
+        "z": "6b73c2e5.96fc4c",
+        "name": "Sample Dashboard that plots various Chart types",
+        "info": "",
+        "x": 250,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "4a8c9f5c.5425b8",
+        "type": "function",
+        "z": "6b73c2e5.96fc4c",
+        "name": "Fill Multiple Line Chart Array",
+        "func": "var chart = [  {\"series\":[\"A\",\"B\",\"C\"],\n                \"data\":[\n                    [{\"x\":1504029632890,\"y\":5},\n                     {\"x\":1504029636001,\"y\":4},\n                     {\"x\":1504029638656,\"y\":2}],\n                    [{\"x\":1504029633514,\"y\":6},\n                     {\"x\":1504029636622,\"y\":7},\n                     {\"x\":1504029639539,\"y\":6}],\n                    [{\"x\":1504029634400,\"y\":7},\n                     {\"x\":1504029637959,\"y\":9},\n                     {\"x\":1504029640317,\"y\":7}]\n                ],\n                \"labels\":[\"\"]}];\nmsg.payload = chart;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "21aded9b.7f430a",
+                "f61eeb50.ddb61"
+            ]
+        ]
+    },
+    {
+        "id": "f61eeb50.ddb61",
+        "type": "debug",
+        "z": "6b73c2e5.96fc4c",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 590,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "87b4c5ee.0cffc8",
+        "type": "inject",
+        "z": "6b73c2e5.96fc4c",
+        "name": "",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "d93630d8.224ca8"
+            ]
+        ]
+    },
+    {
+        "id": "cf6fafbe.b919a",
+        "type": "inject",
+        "z": "6b73c2e5.96fc4c",
+        "name": "",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "4a8c9f5c.5425b8"
+            ]
+        ]
+    },
+    {
+        "id": "33be7466.9c070c",
+        "type": "inject",
+        "z": "6b73c2e5.96fc4c",
+        "name": "",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "x": 130,
+        "y": 540,
+        "wires": [
+            [
+                "a0e48e38.8bcde8"
+            ]
+        ]
+    },
+    {
+        "id": "a0e48e38.8bcde8",
+        "type": "function",
+        "z": "6b73c2e5.96fc4c",
+        "name": "Fill Bar Chart Array",
+        "func": "var bar={};\nbar.labels = [\"Q1 16\",\"Q2 16\",\"Q3 16\",\"Q4 16\",\"Q1 17\",\"Q2 17\",\"Q3 17\"];\nbar.series = ['Sales A', 'Sales B', 'Sales C', 'Sales D'];\n// An array of 4 arrays of 7 elements\nbar.data = [\n    [65, 59, 80, 81, 56, 55, 40],\n    [28, 48, 40, 19, 86, 27, 90],\n    [38, 28, 20, 49, 45, 60, 20],\n    [58, 18, 40, 29, 15, 30, 60]\n  ];\nreturn {payload:[bar]};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 310,
+        "y": 540,
+        "wires": [
+            [
+                "d47213cb.1f393",
+                "39f447ce.96d028",
+                "b5af5516.4bd188"
+            ]
+        ]
+    },
+    {
+        "id": "39f447ce.96d028",
+        "type": "debug",
+        "z": "6b73c2e5.96fc4c",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 590,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "b8c3108b.b4752",
+        "type": "function",
+        "z": "6b73c2e5.96fc4c",
+        "name": "Fill Pie Chart Array",
+        "func": "var pie={};\npie.labels = [\"Geo1\",\"Geo2\",\"Geo3\",\"Geo4\",\"Geo5\"];\npie.series = ['Sales A', 'Sales B', 'Sales C', 'Sales D'];\npie.data =   [ [16, 27, 42, 65, 89] ];\n//return {payload:[pie]};\n\nvar pie={ \"labels\" : [\"Geo1\",\"Geo2\",\"Geo3\",\"Geo4\",\"Geo5\"],\n          \"series\" : ['Sales A', 'Sales B', 'Sales C', 'Sales D'],\n          \"data\"   : [ [16, 27, 42, 65, 89] ]\n        };\nmsg.payload = [pie];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 310,
+        "y": 320,
+        "wires": [
+            [
+                "e40626ec.1591d",
+                "9df19fa6.223e2",
+                "96030127.4b5a28",
+                "4b2e23f5.10c4fc",
+                "4dcf5695.aee3b8"
+            ]
+        ]
+    },
+    {
+        "id": "8d717502.bd1968",
+        "type": "inject",
+        "z": "6b73c2e5.96fc4c",
+        "name": "",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "b8c3108b.b4752"
+            ]
+        ]
+    },
+    {
+        "id": "9df19fa6.223e2",
+        "type": "debug",
+        "z": "6b73c2e5.96fc4c",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 590,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "c58c5119.827ab",
+        "type": "ui_switch",
+        "z": "e61d7807.20aac8",
+        "name": "",
+        "label": "Switch",
+        "group": "8044ca01.afd2c8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 270,
+        "y": 140,
+        "wires": [
+            [
+                "c15ea1c5.969918"
+            ]
+        ]
+    },
+    {
+        "id": "3d85e801.ded8b",
+        "type": "ui_slider",
+        "z": "e61d7807.20aac8",
+        "name": "",
+        "label": "Slider",
+        "group": "200ffc2.4a43704",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": "",
+        "x": 350,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d6f8c87e.c71268",
+        "type": "ui_text",
+        "z": "e61d7807.20aac8",
+        "group": "200ffc2.4a43704",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 350,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "2de29a96.96fa9e",
+        "type": "ui_text",
+        "z": "e61d7807.20aac8",
+        "group": "8044ca01.afd2c8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 270,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "30763357.5cb88c",
+        "type": "ui_gauge",
+        "z": "e61d7807.20aac8",
+        "name": "Gauge",
+        "group": "200ffc2.4a43704",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 350,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "d08893cd.a4efd8",
         "type": "ui_chart",
-        "z": "9fa5ae27.2c6838",
+        "z": "e61d7807.20aac8",
         "name": "Chart",
-        "group": "3b10840.e8a04fc",
+        "group": "200ffc2.4a43704",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -270,383 +835,15 @@
         ]
     },
     {
-        "id": "e2218e66.f7f2",
-        "type": "ui_gauge",
-        "z": "9fa5ae27.2c6838",
-        "name": "Gauge",
-        "group": "3b10840.e8a04fc",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "Gauge",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 350,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "a564d49b.423fe",
-        "type": "ui_slider",
-        "z": "9fa5ae27.2c6838",
-        "name": "",
-        "label": "Slider",
-        "group": "3b10840.e8a04fc",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "topic": "",
-        "min": 0,
-        "max": "100",
-        "step": "",
-        "x": 350,
-        "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "cf9efe9a.9f4958",
-        "type": "ui_text",
-        "z": "9fa5ae27.2c6838",
-        "group": "3b10840.e8a04fc",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Text",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 350,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "fc77c46b.45161",
-        "type": "ui_switch",
-        "z": "9fa5ae27.2c6838",
-        "name": "",
-        "label": "Switch",
-        "group": "ff0ecf5d.bee87",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "x": 270,
-        "y": 140,
-        "wires": [
-            [
-                "41341309.e28eac"
-            ]
-        ]
-    },
-    {
-        "id": "e85b747e.d72f18",
-        "type": "ui_text",
-        "z": "9fa5ae27.2c6838",
-        "group": "ff0ecf5d.bee87",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 270,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "fb092c51.5c82c8",
-        "type": "inject",
-        "z": "9fa5ae27.2c6838",
-        "name": "Instructions",
-        "topic": "",
-        "payload": "Use the toggle switch to start / stop the generation of random numbers",
-        "payloadType": "str",
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "x": 110,
-        "y": 60,
-        "wires": [
-            [
-                "e85b747e.d72f18"
-            ]
-        ]
-    },
-    {
-        "id": "d15fc007.21d758",
-        "type": "ui_toast",
-        "z": "9fa5ae27.2c6838",
-        "position": "top right",
-        "displayTime": "5",
-        "highlight": "",
-        "outputs": 0,
-        "ok": "OK",
-        "cancel": "",
-        "topic": "",
-        "name": "",
-        "x": 790,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "8a148f66.12b8a8",
-        "type": "switch",
-        "z": "9fa5ae27.2c6838",
-        "name": "Warn on High Values",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "gt",
-                "v": "90",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 400,
-        "y": 400,
-        "wires": [
-            [
-                "bf2ca4b7.cd3fc8"
-            ]
-        ]
-    },
-    {
-        "id": "bf2ca4b7.cd3fc8",
-        "type": "template",
-        "z": "9fa5ae27.2c6838",
-        "name": "Alert Msg",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Alert : Critical Value Detected {{payload}}",
-        "output": "str",
-        "x": 600,
-        "y": 400,
-        "wires": [
-            [
-                "d15fc007.21d758"
-            ]
-        ]
-    },
-    {
-        "id": "838eb2fe.a65d18",
-        "type": "link out",
-        "z": "9fa5ae27.2c6838",
-        "name": "",
-        "links": [
-            "60e988f6.fee118"
-        ],
-        "x": 555,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "60e988f6.fee118",
-        "type": "link in",
-        "z": "9fa5ae27.2c6838",
-        "name": "",
-        "links": [
-            "838eb2fe.a65d18"
-        ],
-        "x": 95,
-        "y": 360,
-        "wires": [
-            [
-                "8b1abada.50c0f",
-                "e2218e66.f7f2",
-                "a564d49b.423fe",
-                "cf9efe9a.9f4958",
-                "8a148f66.12b8a8"
-            ]
-        ]
-    },
-    {
-        "id": "7e2f5111.c2b428",
-        "type": "ibmiot in",
-        "z": "2a9f98d3.89463",
-        "authentication": "boundService",
-        "apiKey": "",
-        "inputType": "evt",
-        "logicalInterface": "",
-        "ruleId": "",
-        "deviceId": "",
-        "applicationId": "",
-        "deviceType": "ESP8266",
-        "eventType": "status",
-        "commandType": "",
-        "format": "json",
-        "name": "IBM IoT",
-        "service": "registered",
-        "allDevices": true,
-        "allApplications": "",
-        "allDeviceTypes": false,
-        "allLogicalInterfaces": false,
-        "allEvents": false,
-        "allCommands": "",
-        "allFormats": "",
-        "qos": 0,
-        "x": 80,
-        "y": 180,
-        "wires": [
-            [
-                "3faa5036.f9b148",
-                "b88622fa.d6e71",
-                "1cd13f69.00ac09",
-                "def64771.b11f18"
-            ]
-        ]
-    },
-    {
-        "id": "3faa5036.f9b148",
-        "type": "debug",
-        "z": "2a9f98d3.89463",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "x": 270,
-        "y": 110,
-        "wires": []
-    },
-    {
-        "id": "b88622fa.d6e71",
-        "type": "change",
-        "z": "2a9f98d3.89463",
-        "name": "Chart Temperature",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.d.temp",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 290,
-        "y": 160,
-        "wires": [
-            [
-                "f6d75975.73f14"
-            ]
-        ]
-    },
-    {
-        "id": "1cd13f69.00ac09",
-        "type": "change",
-        "z": "2a9f98d3.89463",
-        "name": "Chart Humidity",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.d.humidity",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 280,
-        "y": 200,
-        "wires": [
-            [
-                "6e6b19b7.84278"
-            ]
-        ]
-    },
-    {
-        "id": "def64771.b11f18",
-        "type": "switch",
-        "z": "2a9f98d3.89463",
-        "name": "Warn on High Values",
-        "property": "payload.d.temp",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "gt",
-                "v": "30",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 300,
-        "y": 250,
-        "wires": [
-            [
-                "fecea96.e1191d8"
-            ]
-        ]
-    },
-    {
-        "id": "fecea96.e1191d8",
-        "type": "template",
-        "z": "2a9f98d3.89463",
-        "name": "Alert Msg",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Alert : Critical Value Detected {{payload.d.temp}}",
-        "output": "str",
-        "x": 490,
-        "y": 250,
-        "wires": [
-            [
-                "c1b9a28b.e4b4f8"
-            ]
-        ]
-    },
-    {
-        "id": "f6d75975.73f14",
+        "id": "47c099e.6642268",
         "type": "ui_chart",
-        "z": "2a9f98d3.89463",
+        "z": "f828d7eb.899ab8",
         "name": "",
-        "group": "a08a610d.d26148",
+        "group": "8e13d0e8.99c598",
         "order": 1,
         "width": 0,
         "height": 0,
-        "label": "DHT Temp",
+        "label": "Discovery Kit Temp",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -672,7 +869,7 @@
             "#c5b0d5"
         ],
         "useOldStyle": false,
-        "x": 480,
+        "x": 500,
         "y": 160,
         "wires": [
             [],
@@ -680,15 +877,15 @@
         ]
     },
     {
-        "id": "6e6b19b7.84278",
+        "id": "f2827b9e.82b4f",
         "type": "ui_chart",
-        "z": "2a9f98d3.89463",
+        "z": "f828d7eb.899ab8",
         "name": "",
-        "group": "a08a610d.d26148",
+        "group": "8e13d0e8.99c598",
         "order": 2,
         "width": 0,
         "height": 0,
-        "label": "DHT Humidity",
+        "label": "Discovery Kit Humidity",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -714,7 +911,7 @@
             "#c5b0d5"
         ],
         "useOldStyle": false,
-        "x": 490,
+        "x": 510,
         "y": 200,
         "wires": [
             [],
@@ -722,27 +919,11 @@
         ]
     },
     {
-        "id": "c1b9a28b.e4b4f8",
-        "type": "ui_toast",
-        "z": "2a9f98d3.89463",
-        "position": "top right",
-        "displayTime": "5",
-        "highlight": "",
-        "outputs": 0,
-        "ok": "OK",
-        "cancel": "",
-        "topic": "",
-        "name": "",
-        "x": 680,
-        "y": 250,
-        "wires": []
-    },
-    {
-        "id": "3a3ec027.2075b",
+        "id": "4c975bd.979f9a4",
         "type": "ui_chart",
-        "z": "537283ab.5ef624",
+        "z": "6b73c2e5.96fc4c",
         "name": "",
-        "group": "b84d1cfb.bb9d28",
+        "group": "a0ddebfd.aaa1d",
         "order": 0,
         "width": 0,
         "height": 0,
@@ -780,50 +961,11 @@
         ]
     },
     {
-        "id": "c4bb6ddb.3475d8",
-        "type": "function",
-        "z": "537283ab.5ef624",
-        "name": "Fill Single Chart Array",
-        "func": "var chart = [{\n    \"series\":[\"A\"],\n    \"data\":[[{\"x\":1504029632890,\"y\":5},\n             {\"x\":1504029633514,\"y\":8},\n             {\"x\":1504029634400,\"y\":3}]],\n    \"labels\":[\"\"]\n}];\nmsg.payload = chart;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 320,
-        "y": 120,
-        "wires": [
-            [
-                "3a3ec027.2075b",
-                "feec490d.0b42f"
-            ]
-        ]
-    },
-    {
-        "id": "feec490d.0b42f",
-        "type": "debug",
-        "z": "537283ab.5ef624",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 590,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "27f6c63c.1cd0a2",
-        "type": "comment",
-        "z": "537283ab.5ef624",
-        "name": "Sample Dashboard that plots various Chart types",
-        "info": "",
-        "x": 250,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "b1fde22c.c7e378",
+        "id": "21aded9b.7f430a",
         "type": "ui_chart",
-        "z": "537283ab.5ef624",
+        "z": "6b73c2e5.96fc4c",
         "name": "",
-        "group": "b84d1cfb.bb9d28",
+        "group": "a0ddebfd.aaa1d",
         "order": 0,
         "width": 0,
         "height": 0,
@@ -861,40 +1003,11 @@
         ]
     },
     {
-        "id": "a94eada9.dd7e68",
-        "type": "function",
-        "z": "537283ab.5ef624",
-        "name": "Fill Multiple Line Chart Array",
-        "func": "var chart = [  {\"series\":[\"A\",\"B\",\"C\"],\n                \"data\":[\n                    [{\"x\":1504029632890,\"y\":5},\n                     {\"x\":1504029636001,\"y\":4},\n                     {\"x\":1504029638656,\"y\":2}],\n                    [{\"x\":1504029633514,\"y\":6},\n                     {\"x\":1504029636622,\"y\":7},\n                     {\"x\":1504029639539,\"y\":6}],\n                    [{\"x\":1504029634400,\"y\":7},\n                     {\"x\":1504029637959,\"y\":9},\n                     {\"x\":1504029640317,\"y\":7}]\n                ],\n                \"labels\":[\"\"]}];\nmsg.payload = chart;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 340,
-        "y": 220,
-        "wires": [
-            [
-                "b1fde22c.c7e378",
-                "e26b76d1.f81a7"
-            ]
-        ]
-    },
-    {
-        "id": "e26b76d1.f81a7",
-        "type": "debug",
-        "z": "537283ab.5ef624",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 590,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "66b41377.89cd64",
+        "id": "d47213cb.1f393",
         "type": "ui_chart",
-        "z": "537283ab.5ef624",
+        "z": "6b73c2e5.96fc4c",
         "name": "",
-        "group": "227c4089.a7b298",
+        "group": "e466d459.7c5a",
         "order": 0,
         "width": 0,
         "height": 0,
@@ -932,98 +1045,11 @@
         ]
     },
     {
-        "id": "2ed762c3.10562e",
-        "type": "inject",
-        "z": "537283ab.5ef624",
-        "name": "",
-        "topic": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "x": 130,
-        "y": 120,
-        "wires": [
-            [
-                "c4bb6ddb.3475d8"
-            ]
-        ]
-    },
-    {
-        "id": "8353596b.9e8c4",
-        "type": "inject",
-        "z": "537283ab.5ef624",
-        "name": "",
-        "topic": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "x": 130,
-        "y": 220,
-        "wires": [
-            [
-                "a94eada9.dd7e68"
-            ]
-        ]
-    },
-    {
-        "id": "db058834.1899f",
-        "type": "inject",
-        "z": "537283ab.5ef624",
-        "name": "",
-        "topic": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "x": 130,
-        "y": 540,
-        "wires": [
-            [
-                "209e7294.5561de"
-            ]
-        ]
-    },
-    {
-        "id": "209e7294.5561de",
-        "type": "function",
-        "z": "537283ab.5ef624",
-        "name": "Fill Bar Chart Array",
-        "func": "var bar={};\nbar.labels = [\"Q1 16\",\"Q2 16\",\"Q3 16\",\"Q4 16\",\"Q1 17\",\"Q2 17\",\"Q3 17\"];\nbar.series = ['Sales A', 'Sales B', 'Sales C', 'Sales D'];\n// An array of 4 arrays of 7 elements\nbar.data = [\n    [65, 59, 80, 81, 56, 55, 40],\n    [28, 48, 40, 19, 86, 27, 90],\n    [38, 28, 20, 49, 45, 60, 20],\n    [58, 18, 40, 29, 15, 30, 60]\n  ];\nreturn {payload:[bar]};",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 310,
-        "y": 540,
-        "wires": [
-            [
-                "66b41377.89cd64",
-                "68f3e5e8.580584",
-                "6c6bae93.dcdf38"
-            ]
-        ]
-    },
-    {
-        "id": "68f3e5e8.580584",
-        "type": "debug",
-        "z": "537283ab.5ef624",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 590,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "6c6bae93.dcdf38",
+        "id": "b5af5516.4bd188",
         "type": "ui_chart",
-        "z": "537283ab.5ef624",
+        "z": "6b73c2e5.96fc4c",
         "name": "",
-        "group": "227c4089.a7b298",
+        "group": "e466d459.7c5a",
         "order": 0,
         "width": 0,
         "height": 0,
@@ -1061,11 +1087,11 @@
         ]
     },
     {
-        "id": "35ac1173.6ea2de",
+        "id": "e40626ec.1591d",
         "type": "ui_chart",
-        "z": "537283ab.5ef624",
+        "z": "6b73c2e5.96fc4c",
         "name": "",
-        "group": "e75237e3.b0a2b8",
+        "group": "a1e26bfa.0fdf48",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -1103,62 +1129,11 @@
         ]
     },
     {
-        "id": "1173f80e.157c",
-        "type": "function",
-        "z": "537283ab.5ef624",
-        "name": "Fill Pie Chart Array",
-        "func": "var pie={};\npie.labels = [\"Geo1\",\"Geo2\",\"Geo3\",\"Geo4\",\"Geo5\"];\npie.series = ['Sales A', 'Sales B', 'Sales C', 'Sales D'];\npie.data =   [ [16, 27, 42, 65, 89] ];\n//return {payload:[pie]};\n\nvar pie={ \"labels\" : [\"Geo1\",\"Geo2\",\"Geo3\",\"Geo4\",\"Geo5\"],\n          \"series\" : ['Sales A', 'Sales B', 'Sales C', 'Sales D'],\n          \"data\"   : [ [16, 27, 42, 65, 89] ]\n        };\nmsg.payload = [pie];\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 310,
-        "y": 320,
-        "wires": [
-            [
-                "35ac1173.6ea2de",
-                "f2064f40.09968",
-                "f7383d61.954c68",
-                "f99d40ab.ccf22",
-                "636fef81.d10d2"
-            ]
-        ]
-    },
-    {
-        "id": "1ef45f0.dc50021",
-        "type": "inject",
-        "z": "537283ab.5ef624",
-        "name": "",
-        "topic": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "x": 130,
-        "y": 320,
-        "wires": [
-            [
-                "1173f80e.157c"
-            ]
-        ]
-    },
-    {
-        "id": "f2064f40.09968",
-        "type": "debug",
-        "z": "537283ab.5ef624",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 590,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "f7383d61.954c68",
+        "id": "96030127.4b5a28",
         "type": "ui_chart",
-        "z": "537283ab.5ef624",
+        "z": "6b73c2e5.96fc4c",
         "name": "",
-        "group": "e75237e3.b0a2b8",
+        "group": "a1e26bfa.0fdf48",
         "order": 3,
         "width": 0,
         "height": 0,
@@ -1196,11 +1171,11 @@
         ]
     },
     {
-        "id": "636fef81.d10d2",
+        "id": "4dcf5695.aee3b8",
         "type": "ui_chart",
-        "z": "537283ab.5ef624",
+        "z": "6b73c2e5.96fc4c",
         "name": "",
-        "group": "e75237e3.b0a2b8",
+        "group": "a1e26bfa.0fdf48",
         "order": 4,
         "width": 0,
         "height": 0,
@@ -1238,11 +1213,11 @@
         ]
     },
     {
-        "id": "f99d40ab.ccf22",
+        "id": "4b2e23f5.10c4fc",
         "type": "ui_chart",
-        "z": "537283ab.5ef624",
+        "z": "6b73c2e5.96fc4c",
         "name": "",
-        "group": "e75237e3.b0a2b8",
+        "group": "a1e26bfa.0fdf48",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -1278,5 +1253,37 @@
             [],
             []
         ]
+    },
+    {
+        "id": "e8dd4642.285678",
+        "type": "ui_toast",
+        "z": "e61d7807.20aac8",
+        "position": "top right",
+        "displayTime": "5",
+        "highlight": "",
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "",
+        "name": "",
+        "x": 790,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "b6ee00eb.2ecce8",
+        "type": "ui_toast",
+        "z": "f828d7eb.899ab8",
+        "position": "top right",
+        "displayTime": "5",
+        "highlight": "",
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "",
+        "name": "",
+        "x": 680,
+        "y": 250,
+        "wires": []
     }
 ]

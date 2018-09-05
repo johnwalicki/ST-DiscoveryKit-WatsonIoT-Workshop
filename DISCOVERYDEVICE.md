@@ -17,7 +17,7 @@ Before you can connect a device to the Watson IoT Platform you need to define ho
 
 You need to decide how you want to group devices, by function, by hardware type, etc.  Each device registered on the platform must be registered against a device type.  There are no restrictions about how devices are grouped and the device types, for this workshop we will create a device type representing the ST Microelectronics Discovery Kit IoT Node devices.
 
-### Step 1 - Add a new device type for Discovery Kit IoT Node device
+### Step 1 - Add a new device type for Discovery Kit IoT Node device
 
 - Navigate into the **Devices** section (1) of the console
 ![Create DiscoveryKit Device](screenshots/IoTP-Devices.png)

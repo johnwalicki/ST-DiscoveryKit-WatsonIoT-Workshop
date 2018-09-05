@@ -61,7 +61,7 @@ Now that you have learned about Node-RED Dashboard and Chart types, you are read
 - Turn to the Node-RED Dashboard browser tab that you launched in Step 2, click on the tab in the upper left corner, and select the **Discovery Kit Workshop** tab.
 
 <p align="center">
-<img height="395" width="282" src="screenshots/NRD-STM-DiscoveryKit-TempHum-Chart.png">
+<img height="335" width="213" src="screenshots/NRD-STM-DiscoveryKit-TempHum-Chart.png">
 </p>
 
 ### Step 5 - Trigger Alerts when Real-Time Sensor Data Exceeds a Threshold Value
@@ -79,7 +79,7 @@ Often IoT devices and sensors are deployed so that alerts can be triggered when 
 - Return to the Node-RED Dashboard **Discovery Kit Workshop** tab and increase the temperature of your Discovery Kit sensor above 30C.
 
  <p align="center">
- <img height="395" width="282" src="screenshots/NRD-STM-DiscoveryKit-TempHum-ChartAlert.png">
+ <img height="384" width="213" src="screenshots/NRD-STM-DiscoveryKit-TempHum-ChartAlert.png">
  </p>
 
  ***
