@@ -59,8 +59,10 @@ Return to the IBM Cloud Application Details page.
 * The **Watson IoT Platform** service will open in a new browser tab and you can create an IoT device.
 ![IoT Platform Device Page](screenshots/IoTP-Service-DevicePage.png)
 
-## Finished
-Congratulations.  You have completed the creation of a Watson Internet of Things Platform Starter application in IBM Cloud.
+
+**Congratulations** - You have completed the creation of a Watson Internet of Things Platform Starter application in IBM Cloud.
+
+Continue to the next step - [Device Types and Devices](DISCOVERYDEVICE.md)
 
 ***
 *Quick links :*

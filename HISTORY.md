@@ -20,7 +20,7 @@ The previous section stored the Device environment sensor data into a Cloudant D
 - Open the “Get the Code” github URL listed below, mark or Ctrl-A to select all of the text, and copy the text for the flow to your Clipboard. Recall from a previous section, click on the Node-RED Menu, then Import, then Clipboard. Paste the text of the flow into the Import nodes dialog and press the red Import button.
 
 <p align="center">
-  <strong>Get the Code: <a href="flows/NRD-STMSensorData-HistorianChart.json">Node-RED Historian Chart Flow</strong></a>
+  <strong>Get the Code: <a href="flows/NRD-HistorianChart-STMSensorData.json">Node-RED Historian Chart Flow</strong></a>
 </p>
 
 - Click on the **Cloudant** node on the Historical Chart flow to confirm that it is configured to your IoT Platform Cloudant service instance.

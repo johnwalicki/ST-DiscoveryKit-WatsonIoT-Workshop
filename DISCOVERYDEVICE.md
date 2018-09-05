@@ -7,7 +7,7 @@
 
 ## Lab Objectives
 
-This Lab will show you how to register your ST Micro Discovery Kit IoT Node with the IBM Watson Internet of Things Platform.  In the lab you will learn:
+This Lab will show you how to register your ST Microelectronics Discovery Kit IoT Node with the IBM Watson Internet of Things Platform.  In the lab you will learn:
 
 - How to define a device type and register a device in the Watson IoT Platform
 
@@ -19,7 +19,7 @@ You need to decide how you want to group devices, by function, by hardware type,
 
 ### Step 1 - Add a new device type for Discovery Kit IoT Node device
 
-- Navigate into the Devices section (1) of the console
+- Navigate into the **Devices** section (1) of the console
 ![Create DiscoveryKit Device](screenshots/IoTP-Devices.png)
 
 - Select the **Device Types** section (2).  Press the **+ Add Device Type** (3) button
@@ -34,10 +34,10 @@ You need to decide how you want to group devices, by function, by hardware type,
 - Press the **Done** button (6)
 ![Create DiscoveryKit Device](screenshots/IoTP-DeviceType-Done.png)
 
-### Step 2 - Register a new Discovery Kit device in the IoT Platform
+### Step 2 - Register a new DiscoveryKit device in the IoT Platform
 
 You now have the opportunity to register a device.
-- Press **Register Device** (7)
+- Press **Register Devices** (7)
 ![Create DiscoveryKit Device](screenshots/IoTP-DeviceRegister.png)
 
 - The DiscoveryKit device type should be pre-selected.  You now need to enter a unique device ID.  You can choose how you want to identify devices.  For the workshop, use a simple format, such as **IoTNode1**. (8)
@@ -46,11 +46,11 @@ You now have the opportunity to register a device.
 
 - Press **Next** button (10)
 ![Create DiscoveryKit Device](screenshots/IoTP-DeviceInfo.png)
-- You will be prompted to provide a token (11).
+- You will be prompted to provide a token (11)
 
 - Each time you connect the device the token will need to be presented to the server. Once the device is registered there is no way to recover a token. You will need to delete and reregister the device if the token is lost or forgotten.
 
-- Enter a **token** for your device (11) then press **Next** (12). *Warning:* Do not select an auth token with the word **Token**
+- Enter a **token** for your device (11) then press **Next** (12).
 ![Create DiscoveryKit Device](screenshots/IoTP-DeviceToken.png)
 
 - You will see a summary of the device.  Press **Done** to complete the device registration.
@@ -142,10 +142,11 @@ publishing sensor data
 ### Discovery Kit IoT Node Environmental Sensor data in Watson IoT platform
 
 Confirm in Watson IoT Platform that ST Microelectronics Discovery Kit IoT Node environmental sensor data is arriving successfully.
-![Create DiscoveryKit Device](screenshots/IoTP-DeviceCreds.png)
+![Create DiscoveryKit Device](screenshots/IoTP-DeviceEventData.png)
 
 **Congratulations** : Your board is sending data securely to Watson IoT Platform using TLS encrypted MQTT packets and server certificates.
 
+Continue to the next step - [Node-RED Setup](NODERED.md)
 ***
 *Quick links :*
 [Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)

@@ -22,8 +22,8 @@ In just a few nodes, Node-RED can receive the data that was transmitted from the
 - Double-click on the IBM IoT node. An **Edit ibmiot in node** sidebar will open.
 - Configure the Authentication dropdown to **Bluemix Service** (2).
 - Uncheck All and set the Device Type to **DiscoveryKit** (3).
-- Check All Device Ids
-- Uncheck All and set the Event **status** (4).
+- Check All Device Ids (4)
+- Uncheck All and set the Event **status** (5).
 - Click on the red **Done** button.
  ![Receive DiscoveryKit Data](screenshots/DiscoveryKit-ReceiveData-IoTnode.png)
 
@@ -37,26 +37,26 @@ In just a few nodes, Node-RED can receive the data that was transmitted from the
 
 - Node-RED passes data from node to node in a *msg.payload* JSON object.
 - The **Switch** node can be used to test if the msg.payload.d.temperature is not null.
-- From the Function category of the left Node-RED palette, select a **Switch** node and drag it onto your Node-RED flow (5).
+- From the Function category of the left Node-RED palette, select a **Switch** node and drag it onto your Node-RED flow (6).
 - Double-click on the Switch node. An **Edit switch node** sidebar will open.
-- Set the "Property" field to *payload.d.temperature* (6).
-- From the dropdown, select **is not null** (7)
+- Set the "Property" field to *payload.d.temperature* (7).
+- From the dropdown, select **is not null** (8)
 - Click on the red **Done** button.
- ![Receive DiscoveryKit Data](screenshots/DiscoveryKit-ReceiveData-Changenode.png)
+ ![Receive DiscoveryKit Data](screenshots/DiscoveryKit-ReceiveData-Switchnode.png)
 
 - The **Change** node can be used to extract a particular value so that it can be directly output or manipulated (for instance in a Dashboard chart which we will take advantage of in the next section).
-- From the Function category of the left Node-RED palette, select a **Change** node and drag it onto your Node-RED flow (8).
+- From the Function category of the left Node-RED palette, select a **Change** node and drag it onto your Node-RED flow (9).
 - Double-click on the Change node. An **Edit change node** sidebar will open.
-- Configure the "to" AZ dropdown to msg. and set it to *payload.d.temperature* (9).
+- Configure the "to" AZ dropdown to msg. and set it to *payload.d.temperature* (10).
 - Click on the red **Done** button.
  ![Receive DiscoveryKit Data](screenshots/DiscoveryKit-ReceiveData-Changenode.png)
 
 ## Step 3 - Node-RED Debug Nodes
 
 - Debug nodes can be used to print out JSON object values and help you validate your program.
-- From the Output category of the left Node-RED palette, drag two **debug nodes** onto your Node-RED flow (10).
+- From the Output category of the left Node-RED palette, drag two **debug nodes** onto your Node-RED flow (11).
 - Double-click on one of them. An **Edit debug node** sidebar will open.
-- Configure the Output to print the *complete msg object* (11).
+- Configure the Output to print the *complete msg object* (12).
 - Click on the red **Done** button.
  ![Receive DiscoveryKit Data](screenshots/DiscoveryKit-ReceiveData-Debugnode.png)
 
@@ -67,6 +67,9 @@ In just a few nodes, Node-RED can receive the data that was transmitted from the
 - Observe the DiscoveryKit IoT Node sensor data in the **debug** tab of the Node-RED right sidebar.  You can expand the twisties to expose the JSON object information. Hover over a debug message in the right sidebar and the node that generated the message will be outlined in orange.
   ![Receive DiscoveryKit Data](screenshots/DiscoveryKit-ReceiveData-Deploy.png)
 
+**Congratulations** - Your Node-RED flow is receiving sensor data from the Discovery Kit board.
+
+Continue to the next step - [Node-RED Charts](DASHBOARD.md)
 ***
 *Quick links :*
 [Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)

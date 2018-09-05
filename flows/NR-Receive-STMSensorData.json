@@ -1,0 +1,121 @@
+[
+    {
+        "id": "f573522b.31a038",
+        "type": "tab",
+        "label": "Receive Discovery Kit Data",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1d6a5456.c3e7cc",
+        "type": "ibmiot in",
+        "z": "f573522b.31a038",
+        "authentication": "boundService",
+        "apiKey": "",
+        "inputType": "evt",
+        "logicalInterface": "",
+        "ruleId": "",
+        "deviceId": "",
+        "applicationId": "",
+        "deviceType": "DiscoveryKit",
+        "eventType": "status",
+        "commandType": "",
+        "format": "json",
+        "name": "IBM IoT",
+        "service": "registered",
+        "allDevices": true,
+        "allApplications": "",
+        "allDeviceTypes": false,
+        "allLogicalInterfaces": "",
+        "allEvents": false,
+        "allCommands": "",
+        "allFormats": "",
+        "qos": 0,
+        "x": 80,
+        "y": 95,
+        "wires": [
+            [
+                "2c0a6426.eddd1c",
+                "f8af7135.cccfe"
+            ]
+        ]
+    },
+    {
+        "id": "2c0a6426.eddd1c",
+        "type": "debug",
+        "z": "f573522b.31a038",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 230,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "3a9e814d.af6a06",
+        "type": "change",
+        "z": "f573522b.31a038",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.d.temperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 405,
+        "y": 130,
+        "wires": [
+            [
+                "98863987.2434"
+            ]
+        ]
+    },
+    {
+        "id": "98863987.2434",
+        "type": "debug",
+        "z": "f573522b.31a038",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 600,
+        "y": 130,
+        "wires": []
+    },
+    {
+        "id": "f8af7135.cccfe",
+        "type": "switch",
+        "z": "f573522b.31a038",
+        "name": "",
+        "property": "payload.d.temperature",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 230,
+        "y": 130,
+        "wires": [
+            [
+                "3a9e814d.af6a06"
+            ]
+        ]
+    }
+]

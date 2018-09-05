@@ -96,6 +96,9 @@ In this step, you will **learn** how to Import a prebuilt flow from GitHub
 - The new flow will be imported into a new tab in the Node-RED Editor.
 - Click the **Deploy** button on the top of menu bar to deploy the Node-RED flow.
 
+### Congratulations - Node-RED is configured
+Continue to the next step - [Sensor Data](DISCOVERYIOTDATA.md)
+
 ***
 *Quick links :*
 [Home](README.md) - [IoT Platform Starter](CREATEIOTP.md) - [Device Types and Devices](DISCOVERYDEVICE.md) - [Node-RED Setup](NODERED.md) - [Sensor Data](DISCOVERYIOTDATA.md) - [Node-RED Charts](DASHBOARD.md) - [Store Data in Cloud Storage](CLOUDANT.md) - [Historical Charts](HISTORY.md) - [Watson Studio](STUDIO.md) - [Jupyter Notebooks](JUPYTER.md)
