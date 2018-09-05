@@ -1,32 +1,32 @@
 [
     {
-        "id": "94c09d59.9dec58",
+        "id": "71e70902.de1e98",
         "type": "tab",
         "label": "Store Sensor Data",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "b9c55847.c9b15",
+        "id": "dc55d79b.46b598",
         "type": "function",
-        "z": "94c09d59.9dec58",
+        "z": "71e70902.de1e98",
         "name": "Format Time Series DB record",
-        "func": "msg.payload = {\n        time:     new Date().getTime(),\n        temp:     msg.payload.d.temperature,\n        humidity: msg.payload.d.humidity\n    } ;\nreturn msg;",
+        "func": "if( typeof(msg.payload.d.temperature) == 'undefined' ) {\n    return null;\n}\nmsg.payload = {\n            time:     new Date().getTime(),\n            temp:     msg.payload.d.temperature,\n            humidity: msg.payload.d.humidity\n        } ;\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "x": 280,
         "y": 100,
         "wires": [
             [
-                "8b252f83.75b5b8",
-                "affeba19.aa9fc8"
+                "208f5af6.1e8f76",
+                "8f1c3652.7eae18"
             ]
         ]
     },
     {
-        "id": "8b252f83.75b5b8",
+        "id": "208f5af6.1e8f76",
         "type": "debug",
-        "z": "94c09d59.9dec58",
+        "z": "71e70902.de1e98",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -38,9 +38,9 @@
         "wires": []
     },
     {
-        "id": "e7126b1c.0bfd08",
+        "id": "34dcffc7.5a0e5",
         "type": "ibmiot in",
-        "z": "94c09d59.9dec58",
+        "z": "71e70902.de1e98",
         "authentication": "boundService",
         "apiKey": "",
         "inputType": "evt",
@@ -66,18 +66,18 @@
         "y": 100,
         "wires": [
             [
-                "b9c55847.c9b15"
+                "dc55d79b.46b598"
             ]
         ]
     },
     {
-        "id": "affeba19.aa9fc8",
+        "id": "8f1c3652.7eae18",
         "type": "cloudant out",
-        "z": "94c09d59.9dec58",
+        "z": "71e70902.de1e98",
         "name": "",
         "cloudant": "",
         "database": "historicaldata1",
-        "service": "",
+        "service": "stmicro-discovery-kit-iot-node-cloudantNoSQLDB",
         "payonly": true,
         "operation": "insert",
         "x": 540,

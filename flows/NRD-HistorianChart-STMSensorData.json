@@ -1,15 +1,15 @@
 [
     {
-        "id": "572a4fbb.49dd48",
+        "id": "b3b2788b.fa92f8",
         "type": "tab",
         "label": "Historical Chart",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "958dd94a.779118",
+        "id": "bb22bead.661d4",
         "type": "debug",
-        "z": "572a4fbb.49dd48",
+        "z": "b3b2788b.fa92f8",
         "name": "",
         "active": true,
         "console": "false",
@@ -19,15 +19,15 @@
         "wires": []
     },
     {
-        "id": "fe0204d0.c3dad8",
+        "id": "69e5bc5b.6f2564",
         "type": "ui_chart",
-        "z": "572a4fbb.49dd48",
+        "z": "b3b2788b.fa92f8",
         "name": "",
-        "group": "5571671c.8ea9b",
+        "group": "17d8839c.1affbc",
         "order": 0,
         "width": 0,
         "height": 0,
-        "label": "ESP8266 DHT Historian Chart",
+        "label": "IoT Sensor Historian Chart",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -53,7 +53,7 @@
             "#c5b0d5"
         ],
         "useOldStyle": false,
-        "x": 970,
+        "x": 960,
         "y": 60,
         "wires": [
             [],
@@ -61,9 +61,9 @@
         ]
     },
     {
-        "id": "c31f0811.b2031",
+        "id": "8a71d6dd.67aa1",
         "type": "function",
-        "z": "572a4fbb.49dd48",
+        "z": "b3b2788b.fa92f8",
         "name": "Create a Chart Array for Chart.js",
         "func": "// This function reformats the timeseries data into an array that \n// Chart.js (See http://www.chartjs.org/ ) will plot\n// The node-red-dashboard Chart node uses Chart.js \n\n// The Array has this structure, inserting the first element as a template.\nvar ChartData = [ {\"series\":[\"Data\"],\n                   \"data\":[[{\"x\":msg.payload[0].time,\"y\":msg.payload[0].temp}]],\n                   \"labels\":[\"Data\"]}];\n\n// Start at 1 because we've already added element 0 in the initial array definition\nfor( var i=1; i < msg.payload.length; i++ ) {\n    ChartData[0].data[0].push( { \"x\":msg.payload[i].time,\"y\":msg.payload[i].temp } );\n}\n// Now we need to sort on the time so that we give the Chart node an array in time order\nChartData[0].data[0].sort(function sortNumber(a,b) { return a.x - b.x; });\n\nmsg.payload = ChartData;\nreturn msg;",
         "outputs": 1,
@@ -72,19 +72,19 @@
         "y": 60,
         "wires": [
             [
-                "fe0204d0.c3dad8",
-                "958dd94a.779118"
+                "69e5bc5b.6f2564",
+                "bb22bead.661d4"
             ]
         ]
     },
     {
-        "id": "6e2193b1.51757c",
+        "id": "12261786.5e11b",
         "type": "cloudant in",
-        "z": "572a4fbb.49dd48",
+        "z": "b3b2788b.fa92f8",
         "name": "",
         "cloudant": "",
         "database": "historicaldata1",
-        "service": "",
+        "service": "stmicro-discovery-kit-iot-node-cloudantNoSQLDB",
         "search": "_all_",
         "design": "",
         "index": "",
@@ -92,15 +92,15 @@
         "y": 60,
         "wires": [
             [
-                "a291ea3c.dcfa08",
-                "c31f0811.b2031"
+                "3a2bfdec.565cc2",
+                "8a71d6dd.67aa1"
             ]
         ]
     },
     {
-        "id": "a291ea3c.dcfa08",
+        "id": "3a2bfdec.565cc2",
         "type": "debug",
-        "z": "572a4fbb.49dd48",
+        "z": "b3b2788b.fa92f8",
         "name": "",
         "active": true,
         "console": "false",
@@ -110,52 +110,52 @@
         "wires": []
     },
     {
-        "id": "9e5cf2f1.9769b",
+        "id": "f573ea28.a59b18",
         "type": "ui_button",
-        "z": "572a4fbb.49dd48",
+        "z": "b3b2788b.fa92f8",
         "name": "",
-        "group": "11d8514.a44dcaf",
+        "group": "57bb7cda.ccd564",
         "order": 0,
         "width": 0,
         "height": 0,
         "passthru": false,
-        "label": "Load ESP8266 DHT Data",
+        "label": "Load IoT Sensor Data",
         "color": "",
         "bgcolor": "",
         "icon": "",
         "payload": "",
         "payloadType": "str",
         "topic": "",
-        "x": 130,
+        "x": 120,
         "y": 60,
         "wires": [
             [
-                "6e2193b1.51757c"
+                "12261786.5e11b"
             ]
         ]
     },
     {
-        "id": "5571671c.8ea9b",
+        "id": "17d8839c.1affbc",
         "type": "ui_group",
         "z": "",
         "name": "Historical Data",
-        "tab": "1f3fcf14.3e0841",
+        "tab": "6729fcb7.37be04",
         "order": 1,
         "disp": true,
         "width": "18"
     },
     {
-        "id": "11d8514.a44dcaf",
+        "id": "57bb7cda.ccd564",
         "type": "ui_group",
         "z": "",
         "name": "Chart Controls",
-        "tab": "1f3fcf14.3e0841",
+        "tab": "6729fcb7.37be04",
         "order": 2,
         "disp": true,
         "width": "6"
     },
     {
-        "id": "1f3fcf14.3e0841",
+        "id": "6729fcb7.37be04",
         "type": "ui_tab",
         "z": "",
         "name": "Historical Data",
