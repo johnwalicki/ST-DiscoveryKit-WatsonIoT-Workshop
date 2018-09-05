@@ -42,8 +42,10 @@ In this Step you will use Node-RED to store IoT Sensor data from the ST Microele
 
 - Return to the [IBM Cloud dashboard](https://console.bluemix.net/dashboard/apps/) and your IoT Starter application. **Click** on the cloudantNoSQLDB (1) service connection.
  ![Cloudant NoSQL Service Connection](screenshots/CloudantNoSQLServiceConnection.png)
-- Read about the Cloudant Storage service and press the **Launch** button.
+- Click on the *Alias of Cloudant-NNN* link
  ![Cloudant NoSQL Service Instance](screenshots/CloudantNoSQLServiceInstance.png)
+- Read about the Cloudant Storage service and press the **Launch** button.
+ ![Cloudant NoSQL Service Instance](screenshots/CloudantNoSQLServiceAlias.png)
 - The IoT Sensor device data is stored in the Cloudant service.
  ![Cloudant NoSQL Databases](screenshots/CloudantNoSQLDatabases.png)
 - Click on historicaldata1 and then observe the **table** view of temperature, humidity and timestamp data.
