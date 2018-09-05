@@ -53,7 +53,7 @@ The next Node-RED flow - **Dashboard Intro** - uses a variety of UI widgets to d
 
 Now that you have learned about Node-RED Dashboard and Chart types, you are ready to plot the real-time device environmental sensor data.
 
-- Turn to the next flow - **Plot DHT Sensor Data**
+- Turn to the next flow - **Plot STM Sensor Data**
 - The **IBM IoT** node is already configured to receive *status* Device Events from the DiscoveryKit Device Type.
 - The **Change** nodes extract the ```msg.payload.d.temperature``` and ```msg.payload.d.humidity``` values from the JSON object sent over MQTT from the device environmental sensor to Watson IoT Platform.
 - The environmental sensor values are sent to two charts to plot Temperature and Humidity.
@@ -69,12 +69,12 @@ Now that you have learned about Node-RED Dashboard and Chart types, you are read
 Often IoT devices and sensors are deployed so that alerts can be triggered when the real time sensor data exceeds a threshold value.  In this last Step, the flow checks the temperature values and, if the temperature exceeds the threshold, triggers a Node-RED Dashboard notification.
 
 - In the prior step, the flow included three nodes that have not yet been discussed.
-- A **Switch** node is configured to *Warn on High Values* by testing if ```msg.payload.d.temp``` is greater than 30C.
+- A **Switch** node is configured to *Warn on High Values* by testing if ```msg.payload.d.temperature``` is greater than 30C.
 - A **Template** node is configured to construct a sentence ```Alert : Critical Value Detected {{payload.d.temperature}}```
 - The Alert message is sent to a **Node-RED Dashboard Notification** node to display in the browser.
 - This flow could be extended to call a **Twilio** node to send a SMS message.  It could raise an alarm in another system by triggering a REST API call to the manufacturing production operations systems.
 
- ![NRD STM DiscoveryKit chart flow](screenshots/Node-RED-Dashboard-STMDK-flow.png)
+ ![NRD STM DiscoveryKit chart flow](screenshots/Node-RED-Dashboard-STM-flow.png)
 
 - Return to the Node-RED Dashboard **Discovery Kit Workshop** tab and increase the temperature of your Discovery Kit sensor above 30C.
 
