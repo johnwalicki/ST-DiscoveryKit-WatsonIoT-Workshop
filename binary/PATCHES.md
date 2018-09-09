@@ -1,5 +1,5 @@
 ### System Workbench for STM32 / TrueSTUDIO
-For software IDE downloads, see Slides 17 - 20 of the [STDevCon_5.2.2  Intro to ST Discovery Kit IoT Node and IBM Watson.pdf](../STDevCon_5.2.2  Intro to ST Discovery Kit IoT Node and IBM Watson.pdf)
+For software IDE downloads, see Slides 17 - 20 of the [STDevCon_5.2.2  Intro to ST Discovery Kit IoT Node and IBM Watson.pdf](../STDevCon_5.2.2%20%20Intro%20to%20ST%20Discovery%20Kit%20IoT%20Node%20and%20IBM%20Watson.pdf)
 
 ### Source Code Download
 [X-CUBE-Watson IBM Watson software expansion for STM32Cube](https://www.st.com/content/st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software/stm32cube-expansion-packages/x-cube-watson.html)
