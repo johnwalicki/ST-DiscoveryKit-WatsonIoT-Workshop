@@ -86,6 +86,7 @@ This tutorial can be completed using an IBM Cloud Lite account.
 - Instructions : [Watson Studio Jupyter Notebook](JUPYTER.md)
 
 ## References:
+- Binary, patches and Software IDE [details](binary/PATCHES.md)
 - Download link to [TrueStudio](https://atollic.com/truestudio/)
 - Download link to the [IBM Watson IoT examples](https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html) that are buildable in TrueStudio
 
