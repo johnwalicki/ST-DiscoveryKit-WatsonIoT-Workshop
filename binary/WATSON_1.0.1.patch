@@ -1,0 +1,177 @@
+diff --git a/Common/Bluemix/inc/bluemix_version.h b/Common/Bluemix/inc/bluemix_version.h
+index bced8cd..e127cef 100644
+--- a/Common/Bluemix/inc/bluemix_version.h
++++ b/Common/Bluemix/inc/bluemix_version.h
+@@ -56,8 +56,8 @@
+ #define FW_VERSION_NAME   "X-CUBE-WATSON-X"
+ #define FW_VERSION_MAJOR 1
+ #define FW_VERSION_MINOR 0
+-#define FW_VERSION_PATCH 0
+-#define FW_VERSION_DATE "25-October-2017  5:49:20 PM"
++#define FW_VERSION_PATCH 1
++#define FW_VERSION_DATE "26-July-2018  5:49:20 PM"
+ 
+ #endif /* __bluemix_version_H */
+ 
+diff --git a/Common/Bluemix/src/bluemix.c b/Common/Bluemix/src/bluemix.c
+index 5cbabab..9279dc1 100644
+--- a/Common/Bluemix/src/bluemix.c
++++ b/Common/Bluemix/src/bluemix.c
+@@ -26,9 +26,6 @@
+ 
+ #define error(A) printf("%s:%d Error:",__FILE__,__LINE__);printf(A)
+ 
+-/* Global variables ---------------------------------------------------------*/
+-extern const user_config_t lUserConfig;
+-
+ /* Private variables ---------------------------------------------------------*/
+ static bool reboot_callback=false;
+ 
+@@ -550,7 +547,7 @@ int setBluemixDevInfo( device_info_t * dev_info )
+         strcpy(dev_info->register_mode,SIMPLE_REG_NAME);
+         dev_info->usecert = 0;
+         strcpy(dev_info->secmode,"token");
+-        dev_info->rootCACertString = (char*)&lUserConfig.tls_root_ca_cert;
++        (void) getTLSKeys(&dev_info->rootCACertString, NULL, NULL);
+       } 
+       else
+         if (strcmp(smallerStr, ORG_ID_KEY) == 0) { devInfoPtr = dev_info->orgid; } else
+diff --git a/Common/Shared/Src/cloud.c b/Common/Shared/Src/cloud.c
+index 02fdb96..6527282 100644
+--- a/Common/Shared/Src/cloud.c
++++ b/Common/Shared/Src/cloud.c
+@@ -274,13 +274,13 @@ int platform_init(void)
+   if (skip_reconf == true)
+   {
+     printf("Push the User button (Blue) within the next 5 seconds if you want to update "
+-           "the device security parameters or credentials.\n\n");
++           "the device credentials.\n\n");
+     skip_reconf = (Button_WaitForPush(5000) == BP_NOT_PUSHED);
+   }
+   
+   if (skip_reconf == false)
+   {
+-    updateTLSCredentials();
++    //updateTLSCredentials();
+     cloud_device_enter_credentials();
+   }
+   /* End of security and cloud parameters definition */
+diff --git a/Common/Shared/Src/iot_flash_config.c b/Common/Shared/Src/iot_flash_config.c
+index 94e61e6..3aa9367 100644
+--- a/Common/Shared/Src/iot_flash_config.c
++++ b/Common/Shared/Src/iot_flash_config.c
+@@ -63,6 +63,8 @@
+ #define PEM_READ_LINE_SIZE    120
+ #define PEM_READ_BUFFER_SIZE  8192  /**< Max size which can be got from the terminal in a single getInputString(). */
+ 
++#define HARDCODED_ROOT_CA
++
+ /* Private macros ------------------------------------------------------------*/
+ #ifdef ENABLE_TRACE_FLASH
+ #define TRACE_FLASH msg_info
+@@ -83,6 +85,67 @@ user_config_t lUserConfig __attribute__((section("UNINIT_FIXED_LOC"), zero_init)
+ user_config_t lUserConfig __attribute__((section("UNINIT_FIXED_LOC")));
+ #endif
+ 
++#ifdef HARDCODED_ROOT_CA
++static const char * hardcoded_root_ca = 
++"-----BEGIN CERTIFICATE-----\n"
++"MIIF2DCCA8CgAwIBAgIQTKr5yttjb+Af907YWwOGnTANBgkqhkiG9w0BAQwFADCB\n"
++"hTELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4G\n"
++"A1UEBxMHU2FsZm9yZDEaMBgGA1UEChMRQ09NT0RPIENBIExpbWl0ZWQxKzApBgNV\n"
++"BAMTIkNPTU9ETyBSU0EgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkwHhcNMTAwMTE5\n"
++"MDAwMDAwWhcNMzgwMTE4MjM1OTU5WjCBhTELMAkGA1UEBhMCR0IxGzAZBgNVBAgT\n"
++"EkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgGA1UEChMR\n"
++"Q09NT0RPIENBIExpbWl0ZWQxKzApBgNVBAMTIkNPTU9ETyBSU0EgQ2VydGlmaWNh\n"
++"dGlvbiBBdXRob3JpdHkwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCR\n"
++"6FSS0gpWsawNJN3Fz0RndJkrN6N9I3AAcbxT38T6KhKPS38QVr2fcHK3YX/JSw8X\n"
++"pz3jsARh7v8Rl8f0hj4K+j5c+ZPmNHrZFGvnnLOFoIJ6dq9xkNfs/Q36nGz637CC\n"
++"9BR++b7Epi9Pf5l/tfxnQ3K9DADWietrLNPtj5gcFKt+5eNu/Nio5JIk2kNrYrhV\n"
++"/erBvGy2i/MOjZrkm2xpmfh4SDBF1a3hDTxFYPwyllEnvGfDyi62a+pGx8cgoLEf\n"
++"Zd5ICLqkTqnyg0Y3hOvozIFIQ2dOciqbXL1MGyiKXCJ7tKuY2e7gUYPDCUZObT6Z\n"
++"+pUX2nwzV0E8jVHtC7ZcryxjGt9XyD+86V3Em69FmeKjWiS0uqlWPc9vqv9JWL7w\n"
++"qP/0uK3pN/u6uPQLOvnoQ0IeidiEyxPx2bvhiWC4jChWrBQdnArncevPDt09qZah\n"
++"SL0896+1DSJMwBGB7FY79tOi4lu3sgQiUpWAk2nojkxl8ZEDLXB0AuqLZxUpaVIC\n"
++"u9ffUGpVRr+goyhhf3DQw6KqLCGqR84onAZFdr+CGCe01a60y1Dma/RMhnEw6abf\n"
++"Fobg2P9A3fvQQoh/ozM6LlweQRGBY84YcWsr7KaKtzFcOmpH4MN5WdYgGq/yapiq\n"
++"crxXStJLnbsQ/LBMQeXtHT1eKJ2czL+zUdqnR+WEUwIDAQABo0IwQDAdBgNVHQ4E\n"
++"FgQUu69+Aj36pvE8hI6t7jiY7NkyMtQwDgYDVR0PAQH/BAQDAgEGMA8GA1UdEwEB\n"
++"/wQFMAMBAf8wDQYJKoZIhvcNAQEMBQADggIBAArx1UaEt65Ru2yyTUEUAJNMnMvl\n"
++"wFTPoCWOAvn9sKIN9SCYPBMtrFaisNZ+EZLpLrqeLppysb0ZRGxhNaKatBYSaVqM\n"
++"4dc+pBroLwP0rmEdEBsqpIt6xf4FpuHA1sj+nq6PK7o9mfjYcwlYRm6mnPTXJ9OV\n"
++"2jeDchzTc+CiR5kDOF3VSXkAKRzH7JsgHAckaVd4sjn8OoSgtZx8jb8uk2Intzna\n"
++"FxiuvTwJaP+EmzzV1gsD41eeFPfR60/IvYcjt7ZJQ3mFXLrrkguhxuhoqEwWsRqZ\n"
++"CuhTLJK7oQkYdQxlqHvLI7cawiiFwxv/0Cti76R7CZGYZ4wUAc1oBmpjIXUDgIiK\n"
++"boHGhfKppC3n9KUkEEeDys30jXlYsQab5xoq2Z0B15R97QNKyvDb6KkBPvVWmcke\n"
++"jkk9u+UJueBPSZI9FoJAzMxZxuY67RIuaTxslbH9qh17f4a+Hg4yRvv7E491f0yL\n"
++"S0Zj/gA0QHDBw7mh3aZw4gSzQbzpgJHqZJx64SIDqZxubw5lT2yHh17zbqD5daWb\n"
++"QOhTsiedSrnAdyGN/4fy3ryM7xfft0kL0fJuMAsaDk527RH89elWsn2/x20Kk4yl\n"
++"0MC2Hb46TpSi125sC8KKfPog88Tk5c0NqMuRkrF8hey1FGlmDoLnzc7ILaZRfyHB\n"
++"NVOFBkpdn627G190\n"
++"-----END CERTIFICATE-----\n"
++"-----BEGIN CERTIFICATE-----\n"
++"MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh\n"
++"MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\n"
++"d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD\n"
++"QTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVT\n"
++"MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j\n"
++"b20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG\n"
++"9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsB\n"
++"CSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97\n"
++"nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt\n"
++"43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7P\n"
++"T19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4\n"
++"gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAO\n"
++"BgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbR\n"
++"TLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUw\n"
++"DQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/Esr\n"
++"hMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg\n"
++"06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJF\n"
++"PnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0ls\n"
++"YSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk\n"
++"CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=\n"
++"-----END CERTIFICATE-----\n";
++#endif
++
++
+ /* Private function prototypes -----------------------------------------------*/
+ bool check(char *s);
+ int CaptureAndFlashPem(char *pem_name, char const *flash_addr, bool restricted_area);
+@@ -701,6 +764,14 @@ int checkServerDevice()
+ int getTLSKeys(const char ** const root_ca_cert, const char ** const device_cert, const char ** const private_key)
+ {
+   int rc = -1;
++  
++#ifdef HARDCODED_ROOT_CA
++  if ((device_cert == NULL) && (private_key == NULL))
++  {
++    if (root_ca_cert != NULL)    *root_ca_cert = hardcoded_root_ca;
++    rc = 0;
++  }
++#else
+   if ( (lUserConfig.ca_tls_magic == USER_CONF_MAGIC)
+ #ifdef AWS
+         && (lUserConfig.device_tls_magic == USER_CONF_MAGIC)
+@@ -718,6 +789,7 @@ int getTLSKeys(const char ** const root_ca_cert, const char ** const device_cert
+     if (device_cert !=NULL)      *device_cert = NULL;
+     if (private_key!= NULL)      *private_key = NULL;
+   }
++#endif /* HARDCODED_ROOT_CA */
+   return rc;
+ }
+ 
+diff --git a/Common/Shared/Src/timedate.c b/Common/Shared/Src/timedate.c
+index 1ef106f..2b1617a 100644
+--- a/Common/Shared/Src/timedate.c
++++ b/Common/Shared/Src/timedate.c
+@@ -103,7 +103,9 @@ int setRTCTimeDateFromNetwork(bool force_apply)
+     ret |= net_sock_setopt(socket, "sock_read_timeout", (uint8_t*)NET_READ_TIMEOUT, sizeof(NET_READ_TIMEOUT));
+     if (TIME_SOURCE_HTTP_PROTO == NET_PROTO_TLS)
+     {
+-      ret |= net_sock_setopt(socket, "tls_ca_certs", (void *)lUserConfig.tls_root_ca_cert, strlen(lUserConfig.tls_root_ca_cert));
++      const char * root_ca = NULL;
++      (void) getTLSKeys(&root_ca, NULL, NULL);
++      ret |= net_sock_setopt(socket, "tls_ca_certs", (uint8_t *) root_ca, strlen(root_ca));
+       ret |= net_sock_setopt(socket, "tls_server_name", (uint8_t*)TIME_SOURCE_HTTP_HOST, sizeof(TIME_SOURCE_HTTP_HOST));
+       ret |= net_sock_setopt(socket, (force_apply == true) ? "tls_server_noverification" : "tls_server_verification", NULL, 0);
+     }
