@@ -47,7 +47,8 @@ This tutorial can be completed using an IBM Cloud Lite account.
 
 ## Part 1 - ST Micro Discovery Kit IoT Node and Watson IoT Quickstart
 
-- Instructions : Review Slides 5 to 13
+- Instructions : Review [Slides 6 to 15](../STDevCon_5.2.2%20%20Intro%20to%20ST%20Discovery%20Kit%20IoT%20Node%20and%20IBM%20Watson.pdf)
+
 
 ## Part 2 - Create an Internet of Things Platform Starter application
 
